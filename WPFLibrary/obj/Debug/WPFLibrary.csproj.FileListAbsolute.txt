@@ -1,0 +1,148 @@
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\App.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.cache
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.lref
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe.config
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.pdb
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.g.resources
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.Properties.Resources.resources
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.GenerateResource.cache
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CoreCompileInputs.cache
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.exe
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.pdb
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csprojAssemblyReference.cache
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.pdb
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll.config
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CopyComplete
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.baml
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.g.cs
+D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe.config
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.pdb
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.pdb
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll.config
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csprojAssemblyReference.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\App.g.cs
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.lref
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.baml
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.g.resources
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.Properties.Resources.resources
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.GenerateResource.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CopyComplete
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.exe
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe.config
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.exe
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\WPFLibrary.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\bin\Debug\LibraryLogic.dll.config
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csprojAssemblyReference.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\App.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.lref
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddBookWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\AddUserWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookRentingWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\BookReturnResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditBookWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\EditUserWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\MainWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\ModificationResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\View\RentResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.g.resources
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.Properties.Resources.resources
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.GenerateResource.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CoreCompileInputs.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.csproj.CopyComplete
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.exe
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\WPFLibrary.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\WPFLibrary.exe.config
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\WPFLibrary.exe
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\WPFLibrary.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\LibraryLogic.dll
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\LibraryLogic.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\LibraryLogic.dll.config
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.csprojAssemblyReference.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddBookWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddUserWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookRentingWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookReturnResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditBookWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditUserWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\MainWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\ModificationResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\RentResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\App.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary_MarkupCompile.lref
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddBookWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddUserWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookRentingWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookReturnResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditBookWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditUserWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\MainWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\ModificationResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\RentResultWindow.baml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.g.resources
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.Properties.Resources.resources
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.csproj.GenerateResource.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.csproj.CoreCompileInputs.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.csproj.CopyComplete
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.exe
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.pdb

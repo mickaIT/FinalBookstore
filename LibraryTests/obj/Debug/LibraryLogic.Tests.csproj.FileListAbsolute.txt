@@ -1,0 +1,12 @@
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\obj\Debug\LibraryLogic.Tests.csprojAssemblyReference.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\obj\Debug\LibraryLogic.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\LibraryLogic.Tests.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\LibraryLogic.Tests.pdb
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\LibraryLogic.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\LibraryLogic.pdb
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\LibraryLogic.dll.config
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\bin\Debug\pl\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\obj\Debug\LibraryLogic.Tests.csproj.CopyComplete
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\obj\Debug\LibraryLogic.Tests.dll
+C:\Users\Rektor\Downloads\BibliotekaBezTestow\Biblioteka\WPFLibrary\LibraryTests\obj\Debug\LibraryLogic.Tests.pdb
