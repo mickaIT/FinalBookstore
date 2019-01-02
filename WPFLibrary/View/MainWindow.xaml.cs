@@ -8,9 +8,6 @@ namespace WPFLibrary
         public LibraryDataService libService { get; set; }
         LibraryListSelection currentLLSelection = LibraryListSelection.None;
 
-        AddUserWindow addUserWindow = null;
-        EditUserWindow editUserWindow = null;
-
         AddBookWindow addBookWindow = null;
         EditBookWindow editBookWindow = null;
 
@@ -34,7 +31,6 @@ namespace WPFLibrary
 
     public enum LibraryListSelection
     {
-        Users,
         Books,
         Rentals,
         None,

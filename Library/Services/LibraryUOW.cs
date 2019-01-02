@@ -9,15 +9,13 @@ namespace LibraryLogic.Services
         private LibraryState libraryData;
 
         private IBookDao booksDao;
-        private IUsersDao usersDao;
         private IRentalDao rentalsDao;
 
-        public LibraryUOW(LibraryState libData, IBookDao bDao, IUsersDao uDao, IRentalDao rDao)
+        public LibraryUOW(LibraryState libData, IBookDao bDao, IRentalDao rDao)
         {
             libraryData = libData;
 
             booksDao = bDao;
-            usersDao = uDao;
             rentalsDao = rDao;
         }
 
@@ -32,7 +30,6 @@ namespace LibraryLogic.Services
         {
             RemoveAllRentals();
             RemoveAllBooks();
-            RemoveAllUsers();
         }
 
         public void RemoveAllBooks()
@@ -46,16 +43,6 @@ namespace LibraryLogic.Services
             }
         }
 
-        public void RemoveAllUsers()
-        {
-            for (int i = libraryData.LibraryUsers.Count - 1; i >= 0; i--)
-            {
-                int userID = libraryData.LibraryUsers[i].ID;
-
-                if (usersDao.CanRemoveUser(userID))
-                    usersDao.RemoveUser(userID);
-            }
-        }
   
         public void RemoveAllRentals()
         {
@@ -65,7 +52,6 @@ namespace LibraryLogic.Services
 
         // Getters (return left side if left side != null, otherwiser return right side)
         public IBookDao GetBooksDao => booksDao ?? (booksDao = new BookDaoBasicImpl(libraryData));
-        public IUsersDao GetUsersDao => usersDao ?? (usersDao = new UserDaoBasicImpl(libraryData));
         public IRentalDao GetRentalsDao => rentalsDao ?? (rentalsDao = new RentalDaoBasicImpl(libraryData));
     }
 }

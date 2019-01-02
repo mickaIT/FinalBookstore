@@ -68,7 +68,6 @@
     <Compile Include="Data\User.cs" />
     <Compile Include="Logic_Implementations\ConstantsLibraryFiller.cs" />
     <Compile Include="Logic_Implementations\RentalDaoBasicImpl.cs" />
-    <Compile Include="Logic_Implementations\UserDaoBasicImpl.cs" />
     <Compile Include="Data\Rental.cs" />
     <Compile Include="Logic\IRentalDao.cs" />
     <Compile Include="Data\LibraryState.cs" />

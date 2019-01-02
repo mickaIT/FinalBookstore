@@ -15,7 +15,6 @@ namespace WPFLibrary
     public enum RentResultType
     {
         RentSuccess,
-        UserNotFound,
-        CannotBorrow,
+        CannotSell,
     }
 }

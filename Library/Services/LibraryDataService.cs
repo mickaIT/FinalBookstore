@@ -13,10 +13,9 @@ namespace LibraryLogic.Services
         {
             LibraryState libraryState = new LibraryState();
             BookDaoBasicImpl bookDao = new BookDaoBasicImpl(libraryState);
-            UserDaoBasicImpl userDao = new UserDaoBasicImpl(libraryState);
             RentalDaoBasicImpl rentalDao = new RentalDaoBasicImpl(libraryState);
 
-            libUOW = new LibraryUOW(libraryState, bookDao, userDao, rentalDao);
+            libUOW = new LibraryUOW(libraryState, bookDao, rentalDao);
             FillLibraryDataWithConstants();
         }
 
@@ -30,11 +29,7 @@ namespace LibraryLogic.Services
         public void RemoveAllBooks()
         {
             libUOW.RemoveAllBooks();
-        }
-        public void RemoveAllUsers()
-        {
-            libUOW.RemoveAllUsers();
-        }      
+        } 
         public void RemoveAllRentals()
         {
             libUOW.RemoveAllRentals();
@@ -110,7 +105,7 @@ namespace LibraryLogic.Services
             return libUOW.GetBooksDao.GetBooksByState(state);
         }
 
-        public void BorrowBook(int id)
+        public void SellBook(int id)
         {
             libUOW.GetBooksDao.BorrowBook(id);
         }
@@ -121,79 +116,13 @@ namespace LibraryLogic.Services
         #endregion
 
 
-        // Users Service
-        #region
-        public void AddUser(User user)
-        {
-            libUOW.GetUsersDao.AddUser(user);
-        }
-        public void AddUser(string name, string surname)
-        {
-            libUOW.GetUsersDao.AddUser(new User(name, surname));
-        }
-
-        public void UpdateUser(UserUpdateData data)
-        {
-            libUOW.GetUsersDao.UpdateUser(data);
-        }
-        public void UpdateUser(int id, string name, string surname)
-        {
-            libUOW.GetUsersDao.UpdateUser(new UserUpdateData(id, name, surname));
-        }
-
-        public bool CanRemoveUser(int id)
-        {
-            return libUOW.GetUsersDao.CanRemoveUser(id);
-        }
-        public void RemoveUser(int id)
-        {
-            libUOW.GetUsersDao.RemoveUser(id);
-        }
-        public void RemoveUser(User user)
-        {
-            RemoveUser(user.ID);
-        }
-
-        public User GetUser(int id)
-        {
-            return libUOW.GetUsersDao.GetUser(id);
-        }
-        public List<User> GetAllUsers()
-        {
-            return libUOW.GetUsersDao.GetAllUsers();
-        }
-        public List<User> GetUsersByFirstName(string firstName)
-        {
-            return libUOW.GetUsersDao.GetUsersByFirstName(firstName);
-        }
-        public List<User> GetUsersByLastName(string lastName)
-        {
-            return libUOW.GetUsersDao.GetUsersByLastName(lastName);
-        }
-        public List<User> GetUsersWithBooks()
-        {
-            return libUOW.GetUsersDao.GetUsersWithRentedBooks();
-        }
-
-        public void AddBookToUser(int userId)
-        {
-            libUOW.GetUsersDao.AddBook(userId);
-        }
-        public void RemoveBookFromUser(int userId)
-        {
-            libUOW.GetUsersDao.RemoveBook(userId);
-        }
-        #endregion
-
-
         // Rentals Service
         #region
-        public void AddRental(int bookId, int userId)
+        public void AddRental(int bookId)
         {
             Book book = libUOW.GetBooksDao.GetBook(bookId);
-            User user = libUOW.GetUsersDao.GetUser(userId);
 
-            libUOW.GetRentalsDao.AddRental(new Rental(book, user));
+            libUOW.GetRentalsDao.AddRental(new Rental(book));
         }
         public void AddRental(Rental rental)
         {
@@ -221,10 +150,6 @@ namespace LibraryLogic.Services
         {
             return libUOW.GetRentalsDao.GetAllRentals();
         }
-        public List<Rental> GetRentalsByUsername(string username)
-        {
-            return libUOW.GetRentalsDao.GetRentalsByUsername(username);
-        }
         #endregion
 
 
@@ -234,10 +159,7 @@ namespace LibraryLogic.Services
         {
             return libUOW.GetBooksDao.GetAllBooks().Count;
         }
-        public int UsersCount()
-        {
-            return libUOW.GetUsersDao.GetAllUsers().Count;
-        }
+
         public int RentalsCount()
         {
             return libUOW.GetRentalsDao.GetAllRentals().Count;

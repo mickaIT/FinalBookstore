@@ -11,6 +11,5 @@ namespace LibraryLogic.Logic
 
         Rental GetRental(int rentalID);
         List<Rental> GetAllRentals();
-        List<Rental> GetRentalsByUsername(string username);
     }
 }

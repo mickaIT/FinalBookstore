@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\
 WPFLibrary
 none
 false
 DEBUG;TRACE
-D:\Studia\Biblioteka\WPFLibrary\WPFLibrary\App.xaml
-10519758394
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\App.xaml
+82015876255
 
-28-824314214
-14311858821
-View\AddBookWindow.xaml;View\AddUserWindow.xaml;View\BookRentingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\EditUserWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\RentResultWindow.xaml;
+24-1155623669
+14-1460182928
+View\AddBookWindow.xaml;View\BookRentingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\RentResultWindow.xaml;
 
-True
+False
 

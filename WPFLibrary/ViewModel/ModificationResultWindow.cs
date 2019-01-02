@@ -18,21 +18,9 @@ namespace WPFLibrary
                         MessageBlock.Text = "Book added successfully.";
                         break;
                     }
-                case ModificationResultType.UserEditCorrect:
-                    {
-                        MessageBlock.Text = "User updated successfully.";
-                        break;
-                    }
-                case ModificationResultType.UserAddition:
-                    {
-                        MessageBlock.Text = "User added successfully.";
-                        break;
-                    }
 
                 case ModificationResultType.BookEditError:
-                case ModificationResultType.BookAdditionFail:
-                case ModificationResultType.UserEditError:
-                case ModificationResultType.UserAdditionFail:     
+                case ModificationResultType.BookAdditionFail:  
                     {
                         MessageBlock.Text = "Error. There are some text fields which are empty. Make sure that everything is filled correctly.";
                         break;

@@ -15,11 +15,6 @@ namespace WPFLibrary
 
     public enum ModificationResultType
     {
-        UserAddition,
-        UserAdditionFail,
-        UserEditCorrect,
-        UserEditError,
-
         BookAddition,
         BookAdditionFail,
         BookEditCorrect,

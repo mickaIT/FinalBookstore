@@ -17,20 +17,6 @@ namespace WPFLibrary
             MessageBlock.Text = message;
         }
 
-        private void DisplayErrorMessage(User user)
-        {
-            string message =
-                "You can't remove "
-                + user.GetUserName() +
-                " because this user still possesses "
-                + user.BooksNumber;
-
-            if (user.BooksNumber > 1) message += " books.";
-            else message += " book.";
-
-            MessageBlock.Text = message;
-        }
-
 
 
         private void OKButton_Click(object sender, RoutedEventArgs e)

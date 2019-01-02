@@ -10,11 +10,5 @@ namespace WPFLibrary
             InitializeComponent();
             DisplayErrorMessage(book);
         }
-
-        public CannotRemoveErrorWindow(User user)
-        {
-            InitializeComponent();
-            DisplayErrorMessage(user);
-        }
     }
 }

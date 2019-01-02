@@ -11,7 +11,6 @@ namespace WPFLibrary
         private void SetupWindow(Book book)
         {
             rentedBookId = book.ID;
-            ShowList();          
         }
 
 
@@ -19,16 +18,12 @@ namespace WPFLibrary
         #region
         private void RentBookButton_Click(object sender, RoutedEventArgs e)
         {
-            object selection = DataContextContainer.SelectedItem;
-
-            if (selection != null)
-            {
-                User user = (User)selection;
-                libService.AddRental(rentedBookId, user.ID);
+            try { 
+                libService.AddRental(rentedBookId);
                 windowCallback(true);
                 this.Close();
             }
-            else
+            catch
             {
                 windowCallback(false);
                 this.Close();
@@ -41,28 +36,5 @@ namespace WPFLibrary
         }
         #endregion
 
-
-        /* Showing user list */
-        #region
-        private void ShowList()
-        {
-            DataContextTitle.Content = "Users";
-            DataContextContainer.ItemsSource = libService.GetAllUsers();
-        }
-        #endregion
-
-
-        /* Window events */
-        #region
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataContextContainer_SelectionChanged(this.DataContextContainer, null);
-        }
-
-        private void DataContextContainer_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-        #endregion
     }
 }

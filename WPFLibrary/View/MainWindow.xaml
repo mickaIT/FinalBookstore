@@ -44,7 +44,6 @@
 					</Grid.ColumnDefinitions>
 
 					<StackPanel Grid.Column="0">
-                      	<Button x:Name="UsersButton" Click="UsersButton_Click" Margin="10 2 10 2" Grid.Column="0" Content="Users" />
 						<Button x:Name="BooksButton" Click="BooksButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Books" />
 						<Button x:Name="RentalsButton" Click="RentalsButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Rentals" />
 					</StackPanel>

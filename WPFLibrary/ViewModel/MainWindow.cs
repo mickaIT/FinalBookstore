@@ -27,28 +27,12 @@ namespace WPFLibrary
                     rentResultWindow.Show();
                 }
             }
-            else
-            {
-                /* Failure */
-                if (rentResultWindow == null || !rentResultWindow.IsLoaded)
-                {
-                    rentResultWindow = new RentResultWindow(RentResultType.UserNotFound);
-                    rentResultWindow.Show();
-                }
-            }
         }
         #endregion
 
 
         /* Selecting Library lists */
         #region
-        private void UsersButton_Click(object sender, RoutedEventArgs e)
-        {
-            currentLLSelection = LibraryListSelection.Users;
-            UpdateButtons();
-            Refresh();
-        }
-
         private void BooksButton_Click(object sender, RoutedEventArgs e)
         {
             currentLLSelection = LibraryListSelection.Books;
@@ -72,15 +56,6 @@ namespace WPFLibrary
             /* Decide what to do basing on current Library List selection */
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Users:
-                    {
-                        if (addUserWindow == null || !addUserWindow.IsLoaded)
-                        {
-                            addUserWindow = new AddUserWindow(libService, Refresh);
-                            addUserWindow.Show();
-                        }
-                        break;
-                    }
                 case LibraryListSelection.Books:
                     {
                         if (addBookWindow == null || !addBookWindow.IsLoaded)
@@ -120,17 +95,6 @@ namespace WPFLibrary
                             }
                             break;
                         }
-                    case LibraryListSelection.Users:
-                        {
-                            User user = (User)selection;
-
-                            if (editUserWindow == null || !editUserWindow.IsLoaded)
-                            {
-                                editUserWindow = new EditUserWindow(libService, user, Refresh);
-                                editUserWindow.Show();
-                            }
-                            break;
-                        }
                     default:
                         {
                             break;
@@ -156,7 +120,7 @@ namespace WPFLibrary
                     /* Error */
                     if (rentResultWindow == null || !rentResultWindow.IsLoaded)
                     {
-                        rentResultWindow = new RentResultWindow(RentResultType.CannotBorrow);
+                        rentResultWindow = new RentResultWindow(RentResultType.CannotSell);
                         rentResultWindow.Show();
                     }
                 }
@@ -233,22 +197,6 @@ namespace WPFLibrary
                             }
                             break;
                         }
-                    case LibraryListSelection.Users:
-                        {
-                            User user = (User)selection;
-
-                            if (libService.CanRemoveUser(user.ID))
-                            {
-                                libService.RemoveUser(user);
-                                Refresh();
-                            }
-                            else if (removalErrorWindow == null || !removalErrorWindow.IsLoaded)
-                            {
-                                removalErrorWindow = new CannotRemoveErrorWindow(user);
-                                removalErrorWindow.Show();
-                            }
-                            break;
-                        }
                     default:
                         {
                             break;
@@ -264,12 +212,6 @@ namespace WPFLibrary
                 case LibraryListSelection.Books:
                     {
                         libService.RemoveAllBooks();
-                        Refresh();
-                        break;
-                    }
-                case LibraryListSelection.Users:
-                    {
-                        libService.RemoveAllUsers();
                         Refresh();
                         break;
                     }
@@ -290,12 +232,6 @@ namespace WPFLibrary
 
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Users:
-                    {
-                        DataContextTitle.Content = "Users";
-                        DataContextContainer.ItemsSource = libService.GetAllUsers();
-                        break;
-                    }
                 case LibraryListSelection.Books:
                     {
                         DataContextTitle.Content = "Books";
@@ -335,23 +271,6 @@ namespace WPFLibrary
                         AddButton.Visibility = Visibility.Visible;
                         RentBookButton.Visibility = Visibility.Visible;
                         ReturnBookButton.Visibility = Visibility.Visible;
-                        EditButton.Visibility = Visibility.Visible;
-
-                        RemoveButton.Visibility = Visibility.Visible;
-                        RemoveAllButton.Visibility = Visibility.Visible;
-                        break;
-                    }
-                case LibraryListSelection.Users:
-                    {
-                        ControlsText.Text = "Manage Users";
-                        AddButton.Content = "Add User";
-                        EditButton.Content = "Edit User";
-                        RemoveButton.Content = "Remove User";
-                        RemoveAllButton.Content = "Remove All Users";
-
-                        AddButton.Visibility = Visibility.Visible;
-                        RentBookButton.Visibility = Visibility.Hidden;
-                        ReturnBookButton.Visibility = Visibility.Hidden;
                         EditButton.Visibility = Visibility.Visible;
 
                         RemoveButton.Visibility = Visibility.Visible;

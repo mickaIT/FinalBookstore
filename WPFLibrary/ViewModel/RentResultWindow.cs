@@ -13,14 +13,9 @@ namespace WPFLibrary
                         MessageBlock.Text = "Book rented successfully.";
                         break;
                     }
-                case RentResultType.UserNotFound:
+                case RentResultType.CannotSell:
                     {
-                        MessageBlock.Text = "Error. User not found.";
-                        break;
-                    }
-                case RentResultType.CannotBorrow:
-                    {
-                        MessageBlock.Text = "Error. This book is already borrowed.";
+                        MessageBlock.Text = "Error. This book is sold.";
                         break;
                     }
                 default:

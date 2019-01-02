@@ -30,8 +30,7 @@ namespace Library.Tests
         public void AddRentalTest()
         {
             Book book = new Book("Turbo", "John Mango", "Crime");
-            User user = new User("John", "Borrower");
-            Rental rental = new Rental(book, user);
+            Rental rental = new Rental(book);
             rentalDao.AddRental(rental);
 
             Assert.AreEqual(rentalDao.GetAllRentals()[0], rental);
@@ -41,8 +40,8 @@ namespace Library.Tests
         [TestMethod()]
         public void RemoveRentalTest()
         {
-            Rental rental1 = new Rental(new Book("t", "a", "g"), new User("fN", "lN"));
-            Rental rental2 = new Rental(new Book("t", "a", "g"), new User("fN", "lN"));
+            Rental rental1 = new Rental(new Book("t", "a", "g"));
+            Rental rental2 = new Rental(new Book("t", "a", "g"));
 
             rentalDao.AddRental(rental1);
             rentalDao.AddRental(rental2);
@@ -59,8 +58,8 @@ namespace Library.Tests
         [TestMethod()]
         public void GetRentalTest()
         {
-            Rental rental1 = new Rental(new Book("t", "a", "g"), new User("fN", "lN"));
-            Rental rental2 = new Rental(new Book("t", "a", "g"), new User("fN", "lN"));
+            Rental rental1 = new Rental(new Book("t", "a", "g"));
+            Rental rental2 = new Rental(new Book("t", "a", "g"));
 
             rentalDao.AddRental(rental1);
             rentalDao.AddRental(rental2);
@@ -69,20 +68,6 @@ namespace Library.Tests
             Assert.AreEqual(rental2, testRental);
         }
 
-        [TestMethod()]
-        public void GetRentalsByUserNameTest()
-        {
-            User user = new User("fN", "lN");
-            Rental rental1 = new Rental(new Book("t", "a", "g"), user);
-            Rental rental2 = new Rental(new Book("t", "a", "g"), user);
-
-            rentalDao.AddRental(rental1);
-            rentalDao.AddRental(rental2);
-
-            List<Rental> rentals = rentalDao.GetRentalsByUsername(user.GetUserName());
-            Assert.IsTrue(rentals.Contains(rental1));
-            Assert.IsTrue(rentals.Contains(rental2));
-        }
     }
 
 }

@@ -64,10 +64,5 @@ namespace LibraryLogic.LogicImplementations
         {
             return libraryData.BookRentals;
         }
-
-        public List<Rental> GetRentalsByUsername(string username)
-        {
-            return GetAllRentals().Select(rental => rental).Where(rental => rental.AssociatedUser.GetUserName().Equals(username)).ToList();
-        }
     }
 }
