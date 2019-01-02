@@ -9,20 +9,39 @@
 
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" >
         <Grid>
-            <StackPanel>
-                <Label Name="DataContextTitle" Content="Regulars" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="20,0,20,0" Height="40" Width="300"/>
-                <Grid Margin="0,20,-0.4,0" Height="94">
+            <StackPanel RenderTransformOrigin="0.525,0.358">
+                <Label Name="DataContextTitle" Content="Add more books" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="20,0,20,0" Height="40" Width="300"/>
+                <Grid Margin="0,20,-0.4,0" Height="272">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="47*"/>
+                        <RowDefinition Height="51*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="39*" />
                     </Grid.ColumnDefinitions>
 
                     <!-- Buttons -->
-                    <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="9.4,0,0,23" Content="Sell Book" HorizontalAlignment="Left" Width="149" Grid.Column="1" RenderTransformOrigin="0.653,0.52"/>
-                    <Button x:Name="CloseButton" Click="CloseButton_Click" Margin="0,0,4.6,23" Content="Close" HorizontalAlignment="Right" Width="143"/>
+                    <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="52,57.6,0,10" Content="Sell Book" HorizontalAlignment="Left" Width="149" Grid.Column="1" RenderTransformOrigin="0.653,0.52" Grid.Row="1"/>
+                    <Button x:Name="CloseButton" Click="CloseButton_Click" Margin="0,57.6,45,10" Content="Close" HorizontalAlignment="Right" Width="143" Grid.Row="1"/>
+                    <ListView HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="230" Grid.RowSpan="2" Margin="0,10,0,0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ListView Grid.Column="1" HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" VerticalAlignment="Top" Width="223" Grid.RowSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </StackPanel>
+            <Label x:Name="DataContextTitle_Copy" Content="Books catalog" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="10,30,258.6,260.4"/>
+            <Label x:Name="DataContextTitle_Copy1" Content="Current invoice" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" Margin="259,30,9.6,260.4"/>
         </Grid>
     </Border>
 </Window>

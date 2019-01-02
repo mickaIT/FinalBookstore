@@ -234,13 +234,12 @@ namespace WPFBookstore
             {
                 case BookstoreListSelection.Books:
                     {
-                        DataContextTitle.Content = "Books";
                         DataContextContainer.ItemsSource = libService.GetAllBooks();
                         break;
                     }
                 case BookstoreListSelection.Rentals:
                     {
-                        DataContextTitle.Content = "Rentals";
+  
                         DataContextContainer.ItemsSource = libService.GetAllRentals();
                         break;
                     }

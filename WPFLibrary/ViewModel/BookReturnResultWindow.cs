@@ -9,7 +9,7 @@ namespace WPFBookstore
             if (success)
                 MessageBlock.Text = "Book returned successfully.";
             else
-                MessageBlock.Text = "Error. This book is not currently borrowed.";
+                MessageBlock.Text = "Error. This book is not currently unavailable.";
         }
 
 

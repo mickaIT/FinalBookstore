@@ -7,73 +7,80 @@
         mc:Ignorable="d"
         Title="BookstoreManager" MinHeight ="450" MinWidth ="820" Height="450" Width="820">
 
-	
-	<Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
 
-        
+    <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+
+
         <!-- Overall window grid -->
         <Grid>
-            
+
 
             <Grid.ColumnDefinitions>
-				<ColumnDefinition Width="3*" /> <!-- Scrollable list -->
-				<ColumnDefinition Width="2*" /> <!-- Buttons -->
-			</Grid.ColumnDefinitions>
-
-			
-			<!-- Scrollable list -->
-			<Grid>
-			<StackPanel Grid.Column="0">
-					<Label Name="DataContextTitle" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="40,20,40,0" Height="40"/>
-					<ListBox Name="DataContextContainer" SelectionChanged="DataContextContainer_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,00,30,0" MinWidth="400" MinHeight="300" Width="Auto" Height="Auto"/>
-			</StackPanel>
-			</Grid>
+                <ColumnDefinition Width="3*" />
+                <!-- Scrollable list -->
+                <ColumnDefinition Width="2*" />
+                <!-- Buttons -->
+            </Grid.ColumnDefinitions>
 
 
-			
-			
-			<!-- Buttons stack panel-->
-			<StackPanel Grid.Column="1" Margin="0,0,-0.4,0">
-
-				<!-- Buttons for changing lists -->
-				<TextBlock Text="Bookstore Lists" FontWeight="Bold" Margin="10 60 0 10" />
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="2*" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
-
-					<StackPanel Grid.Column="0">
-						<Button x:Name="BooksButton" Click="BooksButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Books" />
-						<Button x:Name="RentalsButton" Click="RentalsButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Rentals" />
-					</StackPanel>
-				</Grid>
+            <!-- Scrollable list -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="79*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0">
+                    <Label x:Name="DataContextTitle" FontSize="18px" FontWeight="DemiBold" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="40,20,40,0" Height="40"/>
+                    <ListBox x:Name="DataContextContainer" SelectionChanged="DataContextContainer_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0" MinWidth="400" MinHeight="300" Width="Auto" Height="193"/>
+                </StackPanel>
+            </Grid>
 
 
-				<!-- Control Buttons -->
-				<TextBlock x:Name="ControlsText" Text="Managing Data" FontWeight="Bold" Margin="10 50 10 10" />
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="*" />
-					</Grid.ColumnDefinitions>
 
-					<!-- First column -->
-					<StackPanel Grid.Column="0">
-						<Button x:Name="AddButton" Click="AddButton_Click" Margin="10 2 20 10" Grid.Column="0" Content="Add" />
+
+            <!-- Buttons stack panel-->
+            <StackPanel Grid.Column="1" Margin="0,10,-0.4,0">
+
+                <!-- Buttons for changing lists -->
+                <TextBlock Text="Bookstore Lists" FontWeight="Bold" Margin="10 60 0 10" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <Button x:Name="BooksButton" Click="BooksButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Books" />
+                        <Button x:Name="RentalsButton" Click="RentalsButton_Click" Margin="10 0 10 2" Grid.Column="0" Content="Rentals" />
+                    </StackPanel>
+                </Grid>
+
+
+                <!-- Control Buttons -->
+                <TextBlock x:Name="ControlsText" Text="Managing Data" FontWeight="Bold" Margin="10 50 10 10" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- First column -->
+                    <StackPanel Grid.Column="0">
+                        <Button x:Name="AddButton" Click="AddButton_Click" Margin="10 2 20 10" Grid.Column="0" Content="Add" />
                         <Button x:Name="EditButton" Click="EditButton_Click" Margin="10 0 20 10" Grid.Column="0" Content="Edit" />
                         <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="10 0 20 10" Grid.Column="0" Content="Sell Book" />
-						<Button x:Name="ReturnBookButton" Click="ReturnBookButton_Click" Margin="10 0 20 2" Grid.Column="0" Content="Return Book" />
-					</StackPanel>
+                        <Button x:Name="ReturnBookButton" Click="ReturnBookButton_Click" Margin="10 0 20 2" Grid.Column="0" Content="Return Book" />
+                    </StackPanel>
 
-					<!-- Second column-->
-					<StackPanel Grid.Column="1">
+                    <!-- Second column-->
+                    <StackPanel Grid.Column="1">
                         <Button x:Name="RemoveButton" Click="RemoveButton_Click" Margin="10 2 20 10" Grid.Column="0" Content="Remove" />
-						<Button x:Name="RemoveAllButton" Click="RemoveAllButton_Click" Margin="10 0 20 2" Grid.Column="0" Content="Remove All" />
-					</StackPanel>
-				</Grid>
+                        <Button x:Name="RemoveAllButton" Click="RemoveAllButton_Click" Margin="10 0 20 2" Grid.Column="0" Content="Remove All" />
+                    </StackPanel>
+                </Grid>
 
-			</StackPanel>
-		</Grid>
-	</Border>
+            </StackPanel>
+            <Label Content="Bookstore" FontSize="36" FontFamily="Stencil" Margin="297,0,270.6,347" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Border>
 </Window>
