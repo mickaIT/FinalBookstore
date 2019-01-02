@@ -10,7 +10,7 @@ namespace WPFBookstore
 
         private void SetupWindow(Book book)
         {
-            soldBookId = book.ID;
+            soldBookId = book.ISBN;
         }
 
 
@@ -19,7 +19,7 @@ namespace WPFBookstore
         private void SellBookButton_Click(object sender, RoutedEventArgs e)
         {
             try { 
-                libService.AddRental(soldBookId);
+                bookstoreService.AddRental(soldBookId);
                 windowCallback(true);
                 this.Close();
             }

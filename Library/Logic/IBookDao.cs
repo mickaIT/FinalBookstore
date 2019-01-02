@@ -8,17 +8,17 @@ namespace BookstoreLogic.Logic
         void AddBook(Book book);
         void UpdateBook(BookUpdateData bookData);
 
-        bool CanRemoveBook(int bookID);
-        void RemoveBook(int bookID);
+        bool CanRemoveBook(int bookISBN);
+        void RemoveBook(int bookISBN);
 
-        Book GetBook(int bookID);
+        Book GetBook(int bookISBN);
         List<Book> GetAllBooks();
         List<Book> GetBooksByAuthor(string author);
         List<Book> GetBooksByTitle(string title);
         List<Book> GetBooksByGenre(string genre);
         List<Book> GetBooksByState(BookState state);
        
-        void BorrowBook(int bookID);
-        void ReturnBook(int bookID);
+        void SellBook(int bookISBN);
+        void ReturnBook(int bookISBN);
     }
 }

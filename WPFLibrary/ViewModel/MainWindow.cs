@@ -40,9 +40,9 @@ namespace WPFBookstore
             Refresh();
         }
 
-        private void RentalsButton_Click(object sender, RoutedEventArgs e)
+        private void InvoicesButton_Click(object sender, RoutedEventArgs e)
         {
-            currentLLSelection = BookstoreListSelection.Rentals;
+            currentLLSelection = BookstoreListSelection.Invoices;
             UpdateButtons();
             Refresh();
         }
@@ -60,7 +60,7 @@ namespace WPFBookstore
                     {
                         if (addBookWindow == null || !addBookWindow.IsLoaded)
                         {
-                            addBookWindow = new AddBookWindow(libService, Refresh);
+                            addBookWindow = new AddBookWindow(bookstoreService, Refresh);
                             addBookWindow.Show();
                         }
                         break;
@@ -90,7 +90,7 @@ namespace WPFBookstore
 
                             if (editBookWindow == null || !editBookWindow.IsLoaded)
                             {
-                                editBookWindow = new EditBookWindow(libService, book, Refresh);
+                                editBookWindow = new EditBookWindow(bookstoreService, book, Refresh);
                                 editBookWindow.Show();
                             }
                             break;
@@ -129,7 +129,7 @@ namespace WPFBookstore
                     /* Try to sell the book */
                     if (bookSellingWindow == null || !bookSellingWindow.IsLoaded)
                     {
-                        bookSellingWindow = new BookSellingWindow(libService, book, SellReturn);
+                        bookSellingWindow = new BookSellingWindow(bookstoreService, book, SellReturn);
                         bookSellingWindow.Show();
                     }
                 }
@@ -155,7 +155,7 @@ namespace WPFBookstore
                 }
                 else
                 {
-                    libService.RemoveRental(book);
+                    bookstoreService.RemoveRental(book);
 
                     /* Success */
                     if (bookReturnResultWindow == null || !bookReturnResultWindow.IsLoaded)
@@ -185,9 +185,9 @@ namespace WPFBookstore
                         {
                             Book book = (Book)selection;
 
-                            if (libService.CanRemoveBook(book.ID))
+                            if (bookstoreService.CanRemoveBook(book.ISBN))
                             {
-                                libService.RemoveBook(book);
+                                bookstoreService.RemoveBook(book);
                                 Refresh();
                             }
                             else if (removalErrorWindow == null || !removalErrorWindow.IsLoaded)
@@ -211,7 +211,7 @@ namespace WPFBookstore
             {
                 case BookstoreListSelection.Books:
                     {
-                        libService.RemoveAllBooks();
+                        bookstoreService.RemoveAllBooks();
                         Refresh();
                         break;
                     }
@@ -234,13 +234,14 @@ namespace WPFBookstore
             {
                 case BookstoreListSelection.Books:
                     {
-                        DataContextContainer.ItemsSource = libService.GetAllBooks();
+                        DataContextTitle.Content = "Books";
+                        DataContextContainer.ItemsSource = bookstoreService.GetAllBooks();
                         break;
                     }
-                case BookstoreListSelection.Rentals:
+                case BookstoreListSelection.Invoices:
                     {
-  
-                        DataContextContainer.ItemsSource = libService.GetAllRentals();
+                        DataContextTitle.Content = "Invoices history";
+                        DataContextContainer.ItemsSource = bookstoreService.GetAllInvoices();
                         break;
                     }
                 default:
@@ -276,9 +277,9 @@ namespace WPFBookstore
                         RemoveAllButton.Visibility = Visibility.Visible;
                         break;
                     }
-                case BookstoreListSelection.Rentals:
+                case BookstoreListSelection.Invoices:
                     {
-                        ControlsText.Text = "No actions to perform";
+                        ControlsText.Text = "No actions to perform\n please select \"Books\" to manage data";
                         AddButton.Content = "";
                         EditButton.Content = "";
                         RemoveButton.Content = "";

@@ -62,19 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Book.cs" />
-    <Compile Include="Logic\ILibraryFiller.cs" />
+    <Compile Include="Logic\IBookstoreFiller.cs" />
     <Compile Include="Logic_Implementations\BookDaoBasicImpl.cs" />
     <Compile Include="Logic\IBookDao.cs" />
-    <Compile Include="Data\User.cs" />
-    <Compile Include="Logic_Implementations\ConstantsLibraryFiller.cs" />
+    <Compile Include="Logic_Implementations\ConstantsBookstoreFiller.cs" />
     <Compile Include="Logic_Implementations\RentalDaoBasicImpl.cs" />
     <Compile Include="Data\Rental.cs" />
     <Compile Include="Logic\IRentalDao.cs" />
     <Compile Include="Data\LibraryState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Logic\IUsersDao.cs" />
-    <Compile Include="Services\LibraryDataService.cs" />
-    <Compile Include="Services\LibraryUOW.cs" />
+    <Compile Include="Services\BookstoreDataService.cs" />
+    <Compile Include="Services\BookstoreUOW.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

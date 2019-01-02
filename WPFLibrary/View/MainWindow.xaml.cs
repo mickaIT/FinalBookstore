@@ -5,7 +5,7 @@ namespace WPFBookstore
 {
     public partial class MainWindow : Window
     {
-        public BookstoreDataService libService { get; set; }
+        public BookstoreDataService bookstoreService { get; set; }
         BookstoreListSelection currentLLSelection = BookstoreListSelection.None;
 
         AddBookWindow addBookWindow = null;
@@ -19,7 +19,7 @@ namespace WPFBookstore
 
         public MainWindow()
         {
-            libService = new BookstoreDataService();
+            bookstoreService = new BookstoreDataService();
 
             InitializeComponent();
             UpdateButtons();
@@ -32,7 +32,7 @@ namespace WPFBookstore
     public enum BookstoreListSelection
     {
         Books,
-        Rentals,
+        Invoices,
         None,
     }
 }

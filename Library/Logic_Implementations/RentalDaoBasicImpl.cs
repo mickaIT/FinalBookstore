@@ -10,9 +10,9 @@ namespace BookstoreLogic.LogicImplementations
     {
         private BookstoreState BookstoreData;
 
-        public RentalDaoBasicImpl(BookstoreState libData)
+        public RentalDaoBasicImpl(BookstoreState bookstoreData)
         {
-            BookstoreData = libData;
+            BookstoreData = bookstoreData;
         }
 
 
@@ -20,49 +20,49 @@ namespace BookstoreLogic.LogicImplementations
 
         public void AddRental(Rental rental)
         {
-            BookstoreData.BookRentals.Add(rental);
+            BookstoreData.BookInvoices.Add(rental);
         }
 
-        public void RemoveRental(int rentalID)
+        public void RemoveRental(int rentalISBN)
         {
-            Rental rental = GetRental(rentalID);
+            Rental rental = GetRental(rentalISBN);
                 
             if (rental != null)
             {
                 rental.EndRental();
-                BookstoreData.BookRentals.Remove(rental);
+                BookstoreData.BookInvoices.Remove(rental);
             }
             else
                 throw new InvalidOperationException("RemoveRental: Cannot find specified rental");
         }
 
-        public void RemoveRental(Book rentedBook)
+        public void RemoveRental(Book soldBook)
         {
-            for (int i = 0; i < BookstoreData.BookRentals.Count; i++)
+            for (int i = 0; i < BookstoreData.BookInvoices.Count; i++)
             {
-                if (BookstoreData.BookRentals[i].RentedBook.ID == rentedBook.ID)
+                if (BookstoreData.BookInvoices[i].SoldBook.ISBN == soldBook.ISBN)
                 {
-                    RemoveRental(BookstoreData.BookRentals[i].ID);
+                    RemoveRental(BookstoreData.BookInvoices[i].ID);
                 }
             } 
         }
 
 
-        public Rental GetRental(int rentalID)
+        public Rental GetRental(int rentalISBN)
         {
-            for (int i = 0; i < BookstoreData.BookRentals.Count; i++)
+            for (int i = 0; i < BookstoreData.BookInvoices.Count; i++)
             {
-                if (BookstoreData.BookRentals[i].ID == rentalID)
+                if (BookstoreData.BookInvoices[i].ID == rentalISBN)
                 {
-                    return BookstoreData.BookRentals[i];
+                    return BookstoreData.BookInvoices[i];
                 }
             }
             return null;
         }
 
-        public List<Rental> GetAllRentals()
+        public List<Rental> GetAllInvoices()
         {
-            return BookstoreData.BookRentals;
+            return BookstoreData.BookInvoices;
         }
     }
 }

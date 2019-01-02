@@ -15,7 +15,7 @@ namespace WPFBookstore
         {
             if (!CheckIfEmpty(TitleText.Text) && !CheckIfEmpty(AuthorText.Text) && !CheckIfEmpty(GenreText.Text))
             {
-                libService.AddBook(TitleText.Text, AuthorText.Text, GenreText.Text);
+                bookstoreService.AddBook(TitleText.Text, AuthorText.Text, GenreText.Text);
                 windowCallback();
 
                 //Display success message

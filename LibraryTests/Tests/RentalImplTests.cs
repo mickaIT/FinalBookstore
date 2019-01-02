@@ -8,21 +8,21 @@ namespace Bookstore.Tests
     [TestClass()]
     public class RentalImplTests
     {
-        private BookstoreState libState;
+        private BookstoreState bookstoreState;
         private RentalDaoBasicImpl rentalDao;
 
         [TestInitialize()]
         public void SetUp()
         {
-            this.libState = new BookstoreState();
-            this.rentalDao = new RentalDaoBasicImpl(libState);
+            this.bookstoreState = new BookstoreState();
+            this.rentalDao = new RentalDaoBasicImpl(bookstoreState);
         }
 
         [TestCleanup()]
         public void TearDown()
         {
             this.rentalDao = null;
-            this.libState = null;
+            this.bookstoreState = null;
         }
 
 
@@ -33,7 +33,7 @@ namespace Bookstore.Tests
             Rental rental = new Rental(book);
             rentalDao.AddRental(rental);
 
-            Assert.AreEqual(rentalDao.GetAllRentals()[0], rental);
+            Assert.AreEqual(rentalDao.GetAllInvoices()[0], rental);
         }
 
 
@@ -46,11 +46,11 @@ namespace Bookstore.Tests
             rentalDao.AddRental(rental1);
             rentalDao.AddRental(rental2);
 
-            Assert.AreEqual(rentalDao.GetAllRentals().Count, 2);
+            Assert.AreEqual(rentalDao.GetAllInvoices().Count, 2);
             rentalDao.RemoveRental(1);
 
-            Assert.AreEqual(rentalDao.GetAllRentals().Count, 1);
-            Assert.IsTrue(rentalDao.GetAllRentals().Contains(rental1));
+            Assert.AreEqual(rentalDao.GetAllInvoices().Count, 1);
+            Assert.IsTrue(rentalDao.GetAllInvoices().Contains(rental1));
         }
 
 

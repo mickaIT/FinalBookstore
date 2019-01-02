@@ -4,9 +4,9 @@ namespace BookstoreLogic.Data
 {
     public class Book
     {
-        public static int BookIDCounter = -1;
+        public static int BookISBNCounter = -1;
 
-        public int ID { get; }
+        public int ISBN { get; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Genre { get; set; }
@@ -15,7 +15,7 @@ namespace BookstoreLogic.Data
         /* Creating book */
         public Book (string title, string author, string genre)
         {
-            ID = Interlocked.Increment(ref BookIDCounter);
+            ISBN = Interlocked.Increment(ref BookISBNCounter);
             Title = title;
             Author = author;
             Genre = genre;
@@ -33,10 +33,10 @@ namespace BookstoreLogic.Data
 
 
 
-        /* Borrowing book */
-        public void BorrowBook ()
+        /* Selling book */
+        public void SellBook ()
         {
-            State = BookState.Borrowed;
+            State = BookState.Unavailable;
         }
 
         /* Returning book */
@@ -49,8 +49,8 @@ namespace BookstoreLogic.Data
 
         public override string ToString()
         {
-            string bookStatus = State == BookState.Available ? ",   Status: Available" : ",    Status: Borrowed";
-            return "[ID: " + ID + "],  Title: " + Title + ",  Author: " + Author + ",  Genre: " + Genre + bookStatus;
+            string bookStatus = State == BookState.Available ? ",   Status: Available" : ",    Status: Sold out";
+            return "[ISBN: " + ISBN + "],  Title: " + Title + ",  Author: " + Author + ",  Genre: " + Genre + bookStatus;
         }
     }
 
@@ -59,7 +59,7 @@ namespace BookstoreLogic.Data
     public enum BookState
     {
         Available,
-        Borrowed,
+        Unavailable,
     }
 
 

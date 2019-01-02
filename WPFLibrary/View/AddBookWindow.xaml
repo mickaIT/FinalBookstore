@@ -11,7 +11,7 @@
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
         <StackPanel>
             <!-- Window Title-->
-            <TextBlock Text="Adding new book" FontWeight="Bold" Margin="0 10" />
+            <TextBlock Text="Adding new book" Margin="0 10" FontFamily="Stencil" />
 
             <!-- Title -->
             <TextBlock Text="Title" />

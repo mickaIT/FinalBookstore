@@ -9,14 +9,14 @@ namespace BookstoreLogic.Services
         private BookstoreState BookstoreData;
 
         private IBookDao booksDao;
-        private IRentalDao rentalsDao;
+        private IRentalDao invoicesDao;
 
-        public BookstoreUOW(BookstoreState libData, IBookDao bDao, IRentalDao rDao)
+        public BookstoreUOW(BookstoreState bookstoreData, IBookDao bDao, IRentalDao rDao)
         {
-            BookstoreData = libData;
+            BookstoreData = bookstoreData;
 
             booksDao = bDao;
-            rentalsDao = rDao;
+            invoicesDao = rDao;
         }
 
         public void FillBookstoreState(IBookstoreFiller filler)
@@ -28,7 +28,7 @@ namespace BookstoreLogic.Services
         
         public void RemoveAllData()
         {
-            RemoveAllRentals();
+            RemoveAllInvoices();
             RemoveAllBooks();
         }
 
@@ -36,22 +36,22 @@ namespace BookstoreLogic.Services
         {
             for (int i = BookstoreData.BookstoreBooks.Count - 1; i >= 0; i--)
             {
-                int bookID = BookstoreData.BookstoreBooks[i].ID;
+                int bookISBN = BookstoreData.BookstoreBooks[i].ISBN;
 
-                if (booksDao.CanRemoveBook(bookID))
-                    booksDao.RemoveBook(bookID);
+                if (booksDao.CanRemoveBook(bookISBN))
+                    booksDao.RemoveBook(bookISBN);
             }
         }
 
   
-        public void RemoveAllRentals()
+        public void RemoveAllInvoices()
         {
-            BookstoreData.BookRentals.Clear();
+            BookstoreData.BookInvoices.Clear();
         }
 
 
         // Getters (return left side if left side != null, otherwiser return right side)
         public IBookDao GetBooksDao => booksDao ?? (booksDao = new BookDaoBasicImpl(BookstoreData));
-        public IRentalDao GetRentalsDao => rentalsDao ?? (rentalsDao = new RentalDaoBasicImpl(BookstoreData));
+        public IRentalDao GetInvoicesDao => invoicesDao ?? (invoicesDao = new RentalDaoBasicImpl(BookstoreData));
     }
 }

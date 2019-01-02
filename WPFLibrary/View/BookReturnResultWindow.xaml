@@ -9,7 +9,7 @@
 
 
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
-        <StackPanel>
+        <StackPanel Margin="0.4,40.4,0.2,-0.4">
             <!-- Message -->
 
             <!-- Message -->
@@ -23,16 +23,19 @@
             <!-- Message -->
             <!-- Message -->
             <!-- Message -->
-            <TextBlock x:Name="MessageBlock" TextWrapping="Wrap"  FontSize="18px" Text="Result message" Margin="87,0,76.6,0" Height="39"/>
-            <Grid Margin="0,20,-0.4,0" Height="50">
+            <!-- Message -->
+            <!-- Message -->
+            <TextBlock x:Name="MessageBlock" TextWrapping="Wrap"  FontSize="18px" Text="Result message" Margin="76,0,46.6,0" Height="39" FontFamily="Stencil"/>
+            <Grid Margin="0,20,-0.2,0" Height="37">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="75*" />
+                    <ColumnDefinition Width="119*" />
+                    <ColumnDefinition Width="88*" />
+                    <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- Button -->
-                <Button x:Name="OKButton" Click="OKButton_Click"  Grid.Column="1" Content="OK" />
+                <Button x:Name="OKButton" Click="OKButton_Click" Content="OK" Grid.ColumnSpan="2" Margin="0.8,-17,60.4,29" Grid.Column="1" />
             </Grid>
         </StackPanel>
     </Border>

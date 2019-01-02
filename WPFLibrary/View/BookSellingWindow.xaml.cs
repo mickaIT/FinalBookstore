@@ -7,12 +7,12 @@ namespace WPFBookstore
 {
     public partial class BookSellingWindow : Window
     {
-        BookstoreDataService libService;
+        BookstoreDataService bookstoreService;
         Action<bool> windowCallback;
 
         public BookSellingWindow(BookstoreDataService service, Book book, Action<bool> callback)
         {
-            libService = service;
+            bookstoreService = service;
             windowCallback = callback;
 
             InitializeComponent();

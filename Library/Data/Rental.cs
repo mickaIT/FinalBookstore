@@ -8,16 +8,16 @@ namespace BookstoreLogic.Data
         public static int RentalIDCounter = -1;
 
         public int ID { get; }
-        public Book RentedBook { get; set; }
-        public string RentalStartDate { get; set; }
+        public Book SoldBook { get; set; }
+        public string InvoiceDate { get; set; }
 
         /* Creating rental */
         public Rental(Book book)
         {
             ID = Interlocked.Increment(ref RentalIDCounter);
-            RentedBook = book;            
+            SoldBook = book;            
 
-            RentalStartDate = DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy hh:mm:ss");
+            InvoiceDate = DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy hh:mm:ss");
 
             StartRental();
         }
@@ -25,21 +25,22 @@ namespace BookstoreLogic.Data
         /* Called just after creating this rental */
         private void StartRental()
         {
-            RentedBook.BorrowBook();
+            SoldBook.SellBook();
         }
 
         /* Called just before removing this rental from the list */
         public void EndRental()
         {
-            RentedBook.ReturnBook();
+            SoldBook.ReturnBook();
         }
 
 
         public override string ToString()
         {
             return "[ID: " + ID + "]"
-                    + ",  Rented book: " + RentedBook.Title
-                    + ",  Start date: " + RentalStartDate;
+                    + ",  Sold book: " + SoldBook.Title
+                    +", ISBN: " + SoldBook.ISBN
+                    + ",  Invoice date: " + InvoiceDate;
         }
     }
 }

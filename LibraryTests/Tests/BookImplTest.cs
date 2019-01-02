@@ -8,21 +8,21 @@ namespace BookstoreTests
     [TestClass]
     public class BookImplTest
     {
-        private BookstoreState libState;
+        private BookstoreState bookstoreState;
         private BookDaoBasicImpl bookDao;
 
         [TestInitialize()]
         public void SetUp()
         {
-            libState = new BookstoreState();
-            bookDao = new BookDaoBasicImpl(libState);
+            bookstoreState = new BookstoreState();
+            bookDao = new BookDaoBasicImpl(bookstoreState);
         }
 
         [TestCleanup()]
         public void TearDown()
         {
             bookDao = null;
-            libState = null;
+            bookstoreState = null;
         }
 
         [TestMethod()]
@@ -47,7 +47,7 @@ namespace BookstoreTests
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
             //then
-            Assert.AreEqual(bookDao.GetBook(book2.ID), book2);
+            Assert.AreEqual(bookDao.GetBook(book2.ISBN), book2);
         }
 
         [TestMethod()]
@@ -104,16 +104,15 @@ namespace BookstoreTests
         }
 
         [TestMethod()]
-        public void BorrowBookTest()
+        public void SellBookTest()
         {
             //given
             Book book1 = new Book("Title1", "Steve Jobs", "fantasy");
-            User user = new User("John", "Kowalski");
             bookDao.AddBook(book1);
             //when
-            bookDao.BorrowBook(book1.ID);
+            bookDao.SellBook(book1.ISBN);
             //then
-            Assert.AreEqual(bookDao.GetBook(book1.ID).State, BookState.Borrowed);
+            Assert.AreEqual(bookDao.GetBook(book1.ISBN).State, BookState.Unavailable);
         }
 
         [TestMethod()]
@@ -123,10 +122,10 @@ namespace BookstoreTests
             Book book1 = new Book("Title1", "George Washington", "horror");
             bookDao.AddBook(book1);
             //when
-            bookDao.BorrowBook(book1.ID);
-            bookDao.ReturnBook(book1.ID);
+            bookDao.SellBook(book1.ISBN);
+            bookDao.ReturnBook(book1.ISBN);
             //then
-            Assert.AreEqual(bookDao.GetBook(book1.ID).State, BookState.Available);
+            Assert.AreEqual(bookDao.GetBook(book1.ISBN).State, BookState.Available);
         }
 
         [TestMethod()]
@@ -140,12 +139,12 @@ namespace BookstoreTests
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
 
-            bookDao.BorrowBook(book1.ID);
+            bookDao.SellBook(book1.ISBN);
            
-            List<Book> borrowed = bookDao.GetBooksByState(BookState.Borrowed);
+            List<Book> soldOut = bookDao.GetBooksByState(BookState.Unavailable);
 
-            Assert.IsTrue(borrowed.Count == 1);
-            Assert.IsTrue(borrowed.Contains(book1));
+            Assert.IsTrue(soldOut.Count == 1);
+            Assert.IsTrue(soldOut.Contains(book1));
         }
 
         [TestMethod()]
@@ -159,7 +158,7 @@ namespace BookstoreTests
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
             //when
-            bookDao.RemoveBook(book2.ID);
+            bookDao.RemoveBook(book2.ISBN);
             //then
             List<Book> result = bookDao.GetAllBooks();
             Assert.IsTrue(result.Count == 2);
@@ -174,9 +173,9 @@ namespace BookstoreTests
             Book book1 = new Book("Title1", "Test", "Ttse");
             bookDao.AddBook(book1);
             //when
-            bookDao.BorrowBook(book1.ID);
+            bookDao.SellBook(book1.ISBN);
             //then
-            Assert.IsFalse(bookDao.CanRemoveBook(book1.ID));
+            Assert.IsFalse(bookDao.CanRemoveBook(book1.ISBN));
         }
 
     }

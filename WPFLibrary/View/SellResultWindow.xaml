@@ -9,9 +9,9 @@
 
 
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
-        <StackPanel>
+        <StackPanel Margin="0.4,63.4,0.2,-0.4">
             <!-- Message -->
-            <TextBlock x:Name="MessageBlock" TextWrapping="Wrap"  FontSize="18px" Text="Result message" HorizontalAlignment="Center" Margin="20 0 20 0"/>
+            <TextBlock x:Name="MessageBlock" TextWrapping="Wrap"  FontSize="18px" Text="Result message" HorizontalAlignment="Center" Margin="20 0 20 0" FontFamily="Stencil"/>
 
             <Grid Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>

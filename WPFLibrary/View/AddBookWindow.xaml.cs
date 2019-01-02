@@ -8,12 +8,12 @@ namespace WPFBookstore
     {
         ModificationResultWindow addResultWindow = null;
 
-        BookstoreDataService libService;
+        BookstoreDataService bookstoreService;
         Action windowCallback;
 
         public AddBookWindow(BookstoreDataService service, Action callback)
         {
-            libService = service;
+            bookstoreService = service;
             windowCallback = callback;
 
             InitializeComponent();

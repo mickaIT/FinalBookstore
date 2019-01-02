@@ -6,10 +6,10 @@ namespace BookstoreLogic.Logic
     public interface IRentalDao
     {
         void AddRental(Rental rental);
-        void RemoveRental(int rentalID);
-        void RemoveRental(Book rentedBook);
+        void RemoveRental(int rentalISBN);
+        void RemoveRental(Book soldBook);
 
-        Rental GetRental(int rentalID);
-        List<Rental> GetAllRentals();
+        Rental GetRental(int rentalISBN);
+        List<Rental> GetAllInvoices();
     }
 }

@@ -9,7 +9,7 @@ namespace WPFBookstore
 
         private void SetupWindow(Book book)
         {
-            editedBookId = book.ID;
+            editedBookId = book.ISBN;
 
             TitleText.Text = book.Title;
             AuthorText.Text = book.Author;
@@ -20,7 +20,7 @@ namespace WPFBookstore
         {
             if (!CheckIfEmpty(TitleText.Text) && !CheckIfEmpty(AuthorText.Text) && !CheckIfEmpty(GenreText.Text))
             {
-                libService.UpdateBook(editedBookId, TitleText.Text, AuthorText.Text, GenreText.Text);
+                bookstoreService.UpdateBook(editedBookId, TitleText.Text, AuthorText.Text, GenreText.Text);
                 windowCallback();
 
                 //Display success message

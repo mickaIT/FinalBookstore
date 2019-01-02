@@ -8,7 +8,7 @@ namespace BookstoreLogic.LogicImplementations
         public void Fill(BookstoreState state)
         {
             FillBooks(state);
-            FillRentals(state);
+            FillInvoices(state);
         }
 
         
@@ -24,13 +24,13 @@ namespace BookstoreLogic.LogicImplementations
             state.BookstoreBooks.Add(new Book("Brief Answers to the Big Questions", "Stephen Hawking", "Science"));
         }
         
-        private void FillRentals(BookstoreState state)
+        private void FillInvoices(BookstoreState state)
         {
-            state.BookRentals.Add(new Rental(state.BookstoreBooks[1]));
-            state.BookRentals.Add(new Rental(state.BookstoreBooks[3]));
-            state.BookRentals.Add(new Rental(state.BookstoreBooks[5]));
-            state.BookRentals.Add(new Rental(state.BookstoreBooks[0]));
-            state.BookRentals.Add(new Rental(state.BookstoreBooks[4]));
+            state.BookInvoices.Add(new Rental(state.BookstoreBooks[1]));
+            state.BookInvoices.Add(new Rental(state.BookstoreBooks[3]));
+            state.BookInvoices.Add(new Rental(state.BookstoreBooks[5]));
+            state.BookInvoices.Add(new Rental(state.BookstoreBooks[0]));
+            state.BookInvoices.Add(new Rental(state.BookstoreBooks[4]));
         }
     }
 }
