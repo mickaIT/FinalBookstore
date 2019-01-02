@@ -279,7 +279,7 @@ namespace WPFBookstore
                     }
                 case BookstoreListSelection.Invoices:
                     {
-                        ControlsText.Text = "No actions to perform\n please select \"Books\" to manage data";
+                        ControlsText.Text = "No actions to perform select \"Books\" to manage data";
                         AddButton.Content = "";
                         EditButton.Content = "";
                         RemoveButton.Content = "";

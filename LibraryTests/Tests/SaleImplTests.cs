@@ -29,7 +29,7 @@ namespace Bookstore.Tests
         [TestMethod()]
         public void AddSaleTest()
         {
-            Book book = new Book("Turbo", "John Mango", "Crime");
+            Book book = new Book("Mój piękny syn", "David Sheff", "Biography");
             Sale sale = new Sale(book);
             saleDao.AddSale(sale);
 
@@ -40,8 +40,8 @@ namespace Bookstore.Tests
         [TestMethod()]
         public void RemoveSaleTest()
         {
-            Sale sale1 = new Sale(new Book("t", "a", "g"));
-            Sale sale2 = new Sale(new Book("t", "a", "g"));
+            Sale sale1 = new Sale(new Book("h", "i", "j"));
+            Sale sale2 = new Sale(new Book("h", "i", "j"));
 
             saleDao.AddSale(sale1);
             saleDao.AddSale(sale2);

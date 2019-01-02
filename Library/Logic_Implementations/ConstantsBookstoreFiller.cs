@@ -15,13 +15,13 @@ namespace BookstoreLogic.LogicImplementations
 
         private void FillBooks(BookstoreState state)
         {
-            state.BookstoreBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
-            state.BookstoreBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
-            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.BookstoreBooks.Add(new Book("Roses are Red", "James Patterson", "Thriller"));
-            state.BookstoreBooks.Add(new Book("Brief Answers to the Big Questions", "Stephen Hawking", "Science"));
+            state.BookstoreBooks.Add(new Book("Ślepnąc od świateł", "Jakub Żulczyk", "Modern literature"));
+            state.BookstoreBooks.Add(new Book("Tatuażysta z Auschwitz", "Heather Morris ", "Historic"));
+            state.BookstoreBooks.Add(new Book("Myszy i ludzie", "John Steinbeck", "Modern literature"));
+            state.BookstoreBooks.Add(new Book("Opowieść podręcznej", "Margaret Atwood", "Modern literature"));
+            state.BookstoreBooks.Add(new Book("Wielki Gatsby", "F. Scott Fitzgerald", "Drama"));
+            state.BookstoreBooks.Add(new Book("Pachnidło. Historia pewnego mordercy", "Patrick Süskind", "Drama"));
+            state.BookstoreBooks.Add(new Book("Mój piękny syn", "David Sheff", "Biography"));
         }
         
         private void FillInvoices(BookstoreState state)
