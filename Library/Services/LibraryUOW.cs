@@ -1,27 +1,27 @@
-﻿using LibraryLogic.Data;
-using LibraryLogic.Logic;
-using LibraryLogic.LogicImplementations;
+﻿using BookstoreLogic.Data;
+using BookstoreLogic.Logic;
+using BookstoreLogic.LogicImplementations;
 
-namespace LibraryLogic.Services
+namespace BookstoreLogic.Services
 {
-    public class LibraryUOW
+    public class BookstoreUOW
     {
-        private LibraryState libraryData;
+        private BookstoreState BookstoreData;
 
         private IBookDao booksDao;
         private IRentalDao rentalsDao;
 
-        public LibraryUOW(LibraryState libData, IBookDao bDao, IRentalDao rDao)
+        public BookstoreUOW(BookstoreState libData, IBookDao bDao, IRentalDao rDao)
         {
-            libraryData = libData;
+            BookstoreData = libData;
 
             booksDao = bDao;
             rentalsDao = rDao;
         }
 
-        public void FillLibraryState(ILibraryFiller filler)
+        public void FillBookstoreState(IBookstoreFiller filler)
         {
-            filler.Fill(libraryData);
+            filler.Fill(BookstoreData);
         }
 
 
@@ -34,9 +34,9 @@ namespace LibraryLogic.Services
 
         public void RemoveAllBooks()
         {
-            for (int i = libraryData.LibraryBooks.Count - 1; i >= 0; i--)
+            for (int i = BookstoreData.BookstoreBooks.Count - 1; i >= 0; i--)
             {
-                int bookID = libraryData.LibraryBooks[i].ID;
+                int bookID = BookstoreData.BookstoreBooks[i].ID;
 
                 if (booksDao.CanRemoveBook(bookID))
                     booksDao.RemoveBook(bookID);
@@ -46,12 +46,12 @@ namespace LibraryLogic.Services
   
         public void RemoveAllRentals()
         {
-            libraryData.BookRentals.Clear();
+            BookstoreData.BookRentals.Clear();
         }
 
 
         // Getters (return left side if left side != null, otherwiser return right side)
-        public IBookDao GetBooksDao => booksDao ?? (booksDao = new BookDaoBasicImpl(libraryData));
-        public IRentalDao GetRentalsDao => rentalsDao ?? (rentalsDao = new RentalDaoBasicImpl(libraryData));
+        public IBookDao GetBooksDao => booksDao ?? (booksDao = new BookDaoBasicImpl(BookstoreData));
+        public IRentalDao GetRentalsDao => rentalsDao ?? (rentalsDao = new RentalDaoBasicImpl(BookstoreData));
     }
 }

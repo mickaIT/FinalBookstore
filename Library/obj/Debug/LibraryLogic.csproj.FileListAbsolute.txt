@@ -19,3 +19,10 @@ C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Bib
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\Library\obj\Debug\LibraryLogic.csproj.CoreCompileInputs.cache
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\Library\obj\Debug\LibraryLogic.dll
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\Library\obj\Debug\LibraryLogic.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.dll.config
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.dll
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.csprojAssemblyReference.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.csproj.CoreCompileInputs.cache
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.dll
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.pdb

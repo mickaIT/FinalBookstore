@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class RentResultWindow : Window
     {

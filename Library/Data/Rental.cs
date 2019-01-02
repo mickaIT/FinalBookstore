@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace LibraryLogic.Data
+namespace BookstoreLogic.Data
 {
     public class Rental
     {

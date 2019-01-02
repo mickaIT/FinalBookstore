@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using LibraryLogic.Data;
+using BookstoreLogic.Data;
 
-namespace LibraryLogic.Logic
+namespace BookstoreLogic.Logic
 {
     public interface IBookDao
     {

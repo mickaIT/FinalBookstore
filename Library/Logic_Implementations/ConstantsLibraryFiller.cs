@@ -1,11 +1,11 @@
-﻿using LibraryLogic.Logic;
-using LibraryLogic.Data;
+﻿using BookstoreLogic.Logic;
+using BookstoreLogic.Data;
 
-namespace LibraryLogic.LogicImplementations
+namespace BookstoreLogic.LogicImplementations
 {
-    public class ConstantsLibraryFiller : ILibraryFiller
+    public class ConstantsBookstoreFiller : IBookstoreFiller
     {
-        public void Fill(LibraryState state)
+        public void Fill(BookstoreState state)
         {
             FillBooks(state);
             FillRentals(state);
@@ -13,24 +13,24 @@ namespace LibraryLogic.LogicImplementations
 
         
 
-        private void FillBooks(LibraryState state)
+        private void FillBooks(BookstoreState state)
         {
-            state.LibraryBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
-            state.LibraryBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
-            state.LibraryBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.LibraryBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.LibraryBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
-            state.LibraryBooks.Add(new Book("Roses are Red", "James Patterson", "Thriller"));
-            state.LibraryBooks.Add(new Book("Brief Answers to the Big Questions", "Stephen Hawking", "Science"));
+            state.BookstoreBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
+            state.BookstoreBooks.Add(new Book("The Chemistry of Death", "Simon Beckett", "Crime"));
+            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
+            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
+            state.BookstoreBooks.Add(new Book("Whistleblower", "Tess Gerritsen", "Crime"));
+            state.BookstoreBooks.Add(new Book("Roses are Red", "James Patterson", "Thriller"));
+            state.BookstoreBooks.Add(new Book("Brief Answers to the Big Questions", "Stephen Hawking", "Science"));
         }
         
-        private void FillRentals(LibraryState state)
+        private void FillRentals(BookstoreState state)
         {
-            state.BookRentals.Add(new Rental(state.LibraryBooks[1]));
-            state.BookRentals.Add(new Rental(state.LibraryBooks[3]));
-            state.BookRentals.Add(new Rental(state.LibraryBooks[5]));
-            state.BookRentals.Add(new Rental(state.LibraryBooks[0]));
-            state.BookRentals.Add(new Rental(state.LibraryBooks[4]));
+            state.BookRentals.Add(new Rental(state.BookstoreBooks[1]));
+            state.BookRentals.Add(new Rental(state.BookstoreBooks[3]));
+            state.BookRentals.Add(new Rental(state.BookstoreBooks[5]));
+            state.BookRentals.Add(new Rental(state.BookstoreBooks[0]));
+            state.BookRentals.Add(new Rental(state.BookstoreBooks[4]));
         }
     }
 }

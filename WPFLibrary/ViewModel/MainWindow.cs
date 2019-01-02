@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using LibraryLogic.Data;
+using BookstoreLogic.Data;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class MainWindow : Window
     {
@@ -31,18 +31,18 @@ namespace WPFLibrary
         #endregion
 
 
-        /* Selecting Library lists */
+        /* Selecting Bookstore lists */
         #region
         private void BooksButton_Click(object sender, RoutedEventArgs e)
         {
-            currentLLSelection = LibraryListSelection.Books;
+            currentLLSelection = BookstoreListSelection.Books;
             UpdateButtons();
             Refresh();
         }
 
         private void RentalsButton_Click(object sender, RoutedEventArgs e)
         {
-            currentLLSelection = LibraryListSelection.Rentals;
+            currentLLSelection = BookstoreListSelection.Rentals;
             UpdateButtons();
             Refresh();
         }
@@ -53,10 +53,10 @@ namespace WPFLibrary
         #region
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            /* Decide what to do basing on current Library List selection */
+            /* Decide what to do basing on current Bookstore List selection */
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Books:
+                case BookstoreListSelection.Books:
                     {
                         if (addBookWindow == null || !addBookWindow.IsLoaded)
                         {
@@ -84,7 +84,7 @@ namespace WPFLibrary
             {
                 switch (currentLLSelection)
                 {
-                    case LibraryListSelection.Books:
+                    case BookstoreListSelection.Books:
                         {
                             Book book = (Book)selection;
 
@@ -181,7 +181,7 @@ namespace WPFLibrary
             {
                 switch (currentLLSelection)
                 {
-                    case LibraryListSelection.Books:
+                    case BookstoreListSelection.Books:
                         {
                             Book book = (Book)selection;
 
@@ -209,7 +209,7 @@ namespace WPFLibrary
         {
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Books:
+                case BookstoreListSelection.Books:
                     {
                         libService.RemoveAllBooks();
                         Refresh();
@@ -232,13 +232,13 @@ namespace WPFLibrary
 
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Books:
+                case BookstoreListSelection.Books:
                     {
                         DataContextTitle.Content = "Books";
                         DataContextContainer.ItemsSource = libService.GetAllBooks();
                         break;
                     }
-                case LibraryListSelection.Rentals:
+                case BookstoreListSelection.Rentals:
                     {
                         DataContextTitle.Content = "Rentals";
                         DataContextContainer.ItemsSource = libService.GetAllRentals();
@@ -254,13 +254,13 @@ namespace WPFLibrary
 #endregion
 
 
-        /* Updating buttons when Library List selection changes */
+        /* Updating buttons when Bookstore List selection changes */
         #region
         private void UpdateButtons()
         {
             switch (currentLLSelection)
             {
-                case LibraryListSelection.Books:
+                case BookstoreListSelection.Books:
                     {
                         ControlsText.Text = "Manage Books";
                         AddButton.Content = "Add Book";
@@ -277,7 +277,7 @@ namespace WPFLibrary
                         RemoveAllButton.Visibility = Visibility.Visible;
                         break;
                     }
-                case LibraryListSelection.Rentals:
+                case BookstoreListSelection.Rentals:
                     {
                         ControlsText.Text = "No actions to perform";
                         AddButton.Content = "";
@@ -294,7 +294,7 @@ namespace WPFLibrary
                         RemoveAllButton.Visibility = Visibility.Hidden;
                         break;
                     }
-                case LibraryListSelection.None:
+                case BookstoreListSelection.None:
                 default:
                     {
                         ControlsText.Text = "";

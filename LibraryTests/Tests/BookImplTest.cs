@@ -1,20 +1,20 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LibraryLogic.Data;
-using LibraryLogic.LogicImplementations;
+using BookstoreLogic.Data;
+using BookstoreLogic.LogicImplementations;
 using System.Collections.Generic;
 
-namespace LibraryTests
+namespace BookstoreTests
 {
     [TestClass]
     public class BookImplTest
     {
-        private LibraryState libState;
+        private BookstoreState libState;
         private BookDaoBasicImpl bookDao;
 
         [TestInitialize()]
         public void SetUp()
         {
-            libState = new LibraryState();
+            libState = new BookstoreState();
             bookDao = new BookDaoBasicImpl(libState);
         }
 

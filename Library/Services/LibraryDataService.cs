@@ -1,22 +1,22 @@
 ﻿using System.Collections.Generic;
-using LibraryLogic.Data;
-using LibraryLogic.Logic;
-using LibraryLogic.LogicImplementations;
+using BookstoreLogic.Data;
+using BookstoreLogic.Logic;
+using BookstoreLogic.LogicImplementations;
 
-namespace LibraryLogic.Services
+namespace BookstoreLogic.Services
 {
-    public class LibraryDataService
+    public class BookstoreDataService
     {
-        private LibraryUOW libUOW;
+        private BookstoreUOW libUOW;
 
-        public LibraryDataService()
+        public BookstoreDataService()
         {
-            LibraryState libraryState = new LibraryState();
-            BookDaoBasicImpl bookDao = new BookDaoBasicImpl(libraryState);
-            RentalDaoBasicImpl rentalDao = new RentalDaoBasicImpl(libraryState);
+            BookstoreState BookstoreState = new BookstoreState();
+            BookDaoBasicImpl bookDao = new BookDaoBasicImpl(BookstoreState);
+            RentalDaoBasicImpl rentalDao = new RentalDaoBasicImpl(BookstoreState);
 
-            libUOW = new LibraryUOW(libraryState, bookDao, rentalDao);
-            FillLibraryDataWithConstants();
+            libUOW = new BookstoreUOW(BookstoreState, bookDao, rentalDao);
+            FillBookstoreDataWithConstants();
         }
 
 
@@ -37,12 +37,12 @@ namespace LibraryLogic.Services
         #endregion
 
 
-        // Filling the library data
+        // Filling the Bookstore data
         #region
-        public void FillLibraryDataWithConstants()
+        public void FillBookstoreDataWithConstants()
         {
-            ConstantsLibraryFiller Filler = new ConstantsLibraryFiller();
-            libUOW.FillLibraryState(Filler);
+            ConstantsBookstoreFiller Filler = new ConstantsBookstoreFiller();
+            libUOW.FillBookstoreState(Filler);
         }
         #endregion
 

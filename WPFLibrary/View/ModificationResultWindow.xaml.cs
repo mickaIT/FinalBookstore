@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class ModificationResultWindow : Window
     {

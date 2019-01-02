@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LibraryLogic.Logic;
-using LibraryLogic.Data;
+using BookstoreLogic.Logic;
+using BookstoreLogic.Data;
 
-namespace LibraryLogic.LogicImplementations
+namespace BookstoreLogic.LogicImplementations
 {
     public class BookDaoBasicImpl : IBookDao
     {
-        private LibraryState libraryData;
+        private BookstoreState BookstoreData;
 
-        public BookDaoBasicImpl(LibraryState libData)
+        public BookDaoBasicImpl(BookstoreState libData)
         {
-            libraryData = libData;
+            BookstoreData = libData;
         }
 
 
@@ -20,7 +20,7 @@ namespace LibraryLogic.LogicImplementations
 
         public void AddBook(Book book)
         {
-            libraryData.LibraryBooks.Add(book);
+            BookstoreData.BookstoreBooks.Add(book);
         }
 
         public void UpdateBook(BookUpdateData bookData)
@@ -41,7 +41,7 @@ namespace LibraryLogic.LogicImplementations
             Book book = GetBook(bookID);
 
             if (book != null)
-                libraryData.LibraryBooks.Remove(book);
+                BookstoreData.BookstoreBooks.Remove(book);
             else
                 throw new InvalidOperationException("RemoveBook: Cannot find specified book");
         }
@@ -51,11 +51,11 @@ namespace LibraryLogic.LogicImplementations
 
         public Book GetBook(int bookID)
         {
-            for (int i = 0; i < libraryData.LibraryBooks.Count; i++)
+            for (int i = 0; i < BookstoreData.BookstoreBooks.Count; i++)
             {
-                if (libraryData.LibraryBooks[i].ID == bookID)
+                if (BookstoreData.BookstoreBooks[i].ID == bookID)
                 {
-                    return libraryData.LibraryBooks[i];
+                    return BookstoreData.BookstoreBooks[i];
                 }
             }
             return null;
@@ -63,7 +63,7 @@ namespace LibraryLogic.LogicImplementations
 
         public List<Book> GetAllBooks()
         {
-            return libraryData.LibraryBooks;
+            return BookstoreData.BookstoreBooks;
         }
 
         public List<Book> GetBooksByAuthor(string author)

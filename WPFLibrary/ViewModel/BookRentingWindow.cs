@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using LibraryLogic.Data;
+using BookstoreLogic.Data;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class BookRentingWindow : Window
     {

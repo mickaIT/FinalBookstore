@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LibraryLogic.Logic;
-using LibraryLogic.Data;
+using BookstoreLogic.Logic;
+using BookstoreLogic.Data;
 
-namespace LibraryLogic.LogicImplementations
+namespace BookstoreLogic.LogicImplementations
 {
     public class RentalDaoBasicImpl : IRentalDao
     {
-        private LibraryState libraryData;
+        private BookstoreState BookstoreData;
 
-        public RentalDaoBasicImpl(LibraryState libData)
+        public RentalDaoBasicImpl(BookstoreState libData)
         {
-            libraryData = libData;
+            BookstoreData = libData;
         }
 
 
@@ -20,7 +20,7 @@ namespace LibraryLogic.LogicImplementations
 
         public void AddRental(Rental rental)
         {
-            libraryData.BookRentals.Add(rental);
+            BookstoreData.BookRentals.Add(rental);
         }
 
         public void RemoveRental(int rentalID)
@@ -30,7 +30,7 @@ namespace LibraryLogic.LogicImplementations
             if (rental != null)
             {
                 rental.EndRental();
-                libraryData.BookRentals.Remove(rental);
+                BookstoreData.BookRentals.Remove(rental);
             }
             else
                 throw new InvalidOperationException("RemoveRental: Cannot find specified rental");
@@ -38,11 +38,11 @@ namespace LibraryLogic.LogicImplementations
 
         public void RemoveRental(Book rentedBook)
         {
-            for (int i = 0; i < libraryData.BookRentals.Count; i++)
+            for (int i = 0; i < BookstoreData.BookRentals.Count; i++)
             {
-                if (libraryData.BookRentals[i].RentedBook.ID == rentedBook.ID)
+                if (BookstoreData.BookRentals[i].RentedBook.ID == rentedBook.ID)
                 {
-                    RemoveRental(libraryData.BookRentals[i].ID);
+                    RemoveRental(BookstoreData.BookRentals[i].ID);
                 }
             } 
         }
@@ -50,11 +50,11 @@ namespace LibraryLogic.LogicImplementations
 
         public Rental GetRental(int rentalID)
         {
-            for (int i = 0; i < libraryData.BookRentals.Count; i++)
+            for (int i = 0; i < BookstoreData.BookRentals.Count; i++)
             {
-                if (libraryData.BookRentals[i].ID == rentalID)
+                if (BookstoreData.BookRentals[i].ID == rentalID)
                 {
-                    return libraryData.BookRentals[i];
+                    return BookstoreData.BookRentals[i];
                 }
             }
             return null;
@@ -62,7 +62,7 @@ namespace LibraryLogic.LogicImplementations
 
         public List<Rental> GetAllRentals()
         {
-            return libraryData.BookRentals;
+            return BookstoreData.BookRentals;
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System.Windows;
-using LibraryLogic.Services;
+using BookstoreLogic.Services;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class MainWindow : Window
     {
-        public LibraryDataService libService { get; set; }
-        LibraryListSelection currentLLSelection = LibraryListSelection.None;
+        public BookstoreDataService libService { get; set; }
+        BookstoreListSelection currentLLSelection = BookstoreListSelection.None;
 
         AddBookWindow addBookWindow = null;
         EditBookWindow editBookWindow = null;
@@ -19,7 +19,7 @@ namespace WPFLibrary
 
         public MainWindow()
         {
-            libService = new LibraryDataService();
+            libService = new BookstoreDataService();
 
             InitializeComponent();
             UpdateButtons();
@@ -29,7 +29,7 @@ namespace WPFLibrary
 
 
 
-    public enum LibraryListSelection
+    public enum BookstoreListSelection
     {
         Books,
         Rentals,

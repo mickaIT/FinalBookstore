@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 
-namespace LibraryLogic.Data
+namespace BookstoreLogic.Data
 {
-    public class LibraryState
+    public class BookstoreState
     {
-        public List<Book> LibraryBooks { get; set; }
+        public List<Book> BookstoreBooks { get; set; }
         public List<Rental> BookRentals { get; set; }
 
         
-        public LibraryState()
+        public BookstoreState()
         {
-            LibraryBooks = new List<Book>();
+            BookstoreBooks = new List<Book>();
             BookRentals = new List<Rental>();
         }
     }

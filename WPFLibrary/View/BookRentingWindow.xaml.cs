@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Windows;
-using LibraryLogic.Data;
-using LibraryLogic.Services;
+using BookstoreLogic.Data;
+using BookstoreLogic.Services;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class BookRentingWindow : Window
     {
-        LibraryDataService libService;
+        BookstoreDataService libService;
         Action<bool> windowCallback;
 
-        public BookRentingWindow(LibraryDataService service, Book book, Action<bool> callback)
+        public BookRentingWindow(BookstoreDataService service, Book book, Action<bool> callback)
         {
             libService = service;
             windowCallback = callback;

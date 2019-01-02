@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Windows;
-using LibraryLogic.Services;
+using BookstoreLogic.Services;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class AddBookWindow : Window
     {
         ModificationResultWindow addResultWindow = null;
 
-        LibraryDataService libService;
+        BookstoreDataService libService;
         Action windowCallback;
 
-        public AddBookWindow(LibraryDataService service, Action callback)
+        public AddBookWindow(BookstoreDataService service, Action callback)
         {
             libService = service;
             windowCallback = callback;

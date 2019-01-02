@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using LibraryLogic.Data;
+using BookstoreLogic.Data;
 
-namespace WPFLibrary
+namespace WPFBookstore
 {
     public partial class EditBookWindow : Window
     {

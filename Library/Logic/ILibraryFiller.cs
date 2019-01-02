@@ -1,9 +1,9 @@
-﻿using LibraryLogic.Data;
+﻿using BookstoreLogic.Data;
 
-namespace LibraryLogic.Logic
+namespace BookstoreLogic.Logic
 {
-    public interface ILibraryFiller
+    public interface IBookstoreFiller
     {
-        void Fill(LibraryState state);
+        void Fill(BookstoreState state);
     }
 }

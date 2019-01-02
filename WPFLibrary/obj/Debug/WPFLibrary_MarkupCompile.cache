@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\obj\Debug\
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\
 WPFLibrary
 none
 false
 DEBUG;TRACE
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\BibliotekaFinal\Biblioteka\WPFLibrary\WPFLibrary\App.xaml
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\App.xaml
 82015876255
 
 201500102306
-14-1460182928
+141842874308
 View\AddBookWindow.xaml;View\BookRentingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\RentResultWindow.xaml;
 
 False
