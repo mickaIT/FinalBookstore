@@ -13,9 +13,9 @@ namespace BookstoreLogic.Services
         {
             BookstoreState BookstoreState = new BookstoreState();
             BookDaoBasicImpl bookDao = new BookDaoBasicImpl(BookstoreState);
-            RentalDaoBasicImpl rentalDao = new RentalDaoBasicImpl(BookstoreState);
+            SaleDaoBasicImpl saleDao = new SaleDaoBasicImpl(BookstoreState);
 
-            bookstoreUOW = new BookstoreUOW(BookstoreState, bookDao, rentalDao);
+            bookstoreUOW = new BookstoreUOW(BookstoreState, bookDao, saleDao);
             FillBookstoreDataWithConstants();
         }
 
@@ -118,35 +118,35 @@ namespace BookstoreLogic.Services
 
         // Invoices Service
         #region
-        public void AddRental(int bookId)
+        public void AddSale(int bookId)
         {
             Book book = bookstoreUOW.GetBooksDao.GetBook(bookId);
 
-            bookstoreUOW.GetInvoicesDao.AddRental(new Rental(book));
+            bookstoreUOW.GetInvoicesDao.AddSale(new Sale(book));
         }
-        public void AddRental(Rental rental)
+        public void AddSale(Sale sale)
         {
-            bookstoreUOW.GetInvoicesDao.AddRental(rental);
+            bookstoreUOW.GetInvoicesDao.AddSale(sale);
         }
         
-        public void RemoveRental(int id)
+        public void RemoveSale(int id)
         {
-            bookstoreUOW.GetInvoicesDao.RemoveRental(id);
+            bookstoreUOW.GetInvoicesDao.RemoveSale(id);
         }
-        public void RemoveRental(Rental rental)
+        public void RemoveSale(Sale sale)
         {
-            RemoveRental(rental.ID);
+            RemoveSale(sale.ID);
         }
-        public void RemoveRental(Book rentedBook)
+        public void RemoveSale(Book soldBook)
         {
-            bookstoreUOW.GetInvoicesDao.RemoveRental(rentedBook);
+            bookstoreUOW.GetInvoicesDao.RemoveSale(soldBook);
         }
 
-        public Rental GetRental(int id)
+        public Sale GetSale(int id)
         {
-            return bookstoreUOW.GetInvoicesDao.GetRental(id);
+            return bookstoreUOW.GetInvoicesDao.GetSale(id);
         }
-        public List<Rental> GetAllInvoices()
+        public List<Sale> GetAllInvoices()
         {
             return bookstoreUOW.GetInvoicesDao.GetAllInvoices();
         }

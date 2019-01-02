@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WPFLibrary.Properties {
+namespace WPFBookstore.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

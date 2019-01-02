@@ -9,9 +9,9 @@ namespace BookstoreLogic.Services
         private BookstoreState BookstoreData;
 
         private IBookDao booksDao;
-        private IRentalDao invoicesDao;
+        private ISaleDao invoicesDao;
 
-        public BookstoreUOW(BookstoreState bookstoreData, IBookDao bDao, IRentalDao rDao)
+        public BookstoreUOW(BookstoreState bookstoreData, IBookDao bDao, ISaleDao rDao)
         {
             BookstoreData = bookstoreData;
 
@@ -52,6 +52,6 @@ namespace BookstoreLogic.Services
 
         // Getters (return left side if left side != null, otherwiser return right side)
         public IBookDao GetBooksDao => booksDao ?? (booksDao = new BookDaoBasicImpl(BookstoreData));
-        public IRentalDao GetInvoicesDao => invoicesDao ?? (invoicesDao = new RentalDaoBasicImpl(BookstoreData));
+        public ISaleDao GetInvoicesDao => invoicesDao ?? (invoicesDao = new SaleDaoBasicImpl(BookstoreData));
     }
 }

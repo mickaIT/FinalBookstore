@@ -19,7 +19,7 @@ namespace WPFBookstore
         private void SellBookButton_Click(object sender, RoutedEventArgs e)
         {
             try { 
-                bookstoreService.AddRental(soldBookId);
+                bookstoreService.AddSale(soldBookId);
                 windowCallback(true);
                 this.Close();
             }

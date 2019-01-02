@@ -155,7 +155,7 @@ namespace WPFBookstore
                 }
                 else
                 {
-                    bookstoreService.RemoveRental(book);
+                    bookstoreService.RemoveSale(book);
 
                     /* Success */
                     if (bookReturnResultWindow == null || !bookReturnResultWindow.IsLoaded)

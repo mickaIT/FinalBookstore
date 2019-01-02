@@ -6,11 +6,11 @@ using BookstoreLogic.Data;
 
 namespace BookstoreLogic.LogicImplementations
 {
-    public class RentalDaoBasicImpl : IRentalDao
+    public class SaleDaoBasicImpl : ISaleDao
     {
         private BookstoreState BookstoreData;
 
-        public RentalDaoBasicImpl(BookstoreState bookstoreData)
+        public SaleDaoBasicImpl(BookstoreState bookstoreData)
         {
             BookstoreData = bookstoreData;
         }
@@ -18,41 +18,41 @@ namespace BookstoreLogic.LogicImplementations
 
 
 
-        public void AddRental(Rental rental)
+        public void AddSale(Sale sale)
         {
-            BookstoreData.BookInvoices.Add(rental);
+            BookstoreData.BookInvoices.Add(sale);
         }
 
-        public void RemoveRental(int rentalISBN)
+        public void RemoveSale(int saleISBN)
         {
-            Rental rental = GetRental(rentalISBN);
+            Sale sale = GetSale(saleISBN);
                 
-            if (rental != null)
+            if (sale != null)
             {
-                rental.EndRental();
-                BookstoreData.BookInvoices.Remove(rental);
+                sale.EndSale();
+                BookstoreData.BookInvoices.Remove(sale);
             }
             else
-                throw new InvalidOperationException("RemoveRental: Cannot find specified rental");
+                throw new InvalidOperationException("RemoveSale: Cannot find specified sale");
         }
 
-        public void RemoveRental(Book soldBook)
+        public void RemoveSale(Book soldBook)
         {
             for (int i = 0; i < BookstoreData.BookInvoices.Count; i++)
             {
                 if (BookstoreData.BookInvoices[i].SoldBook.ISBN == soldBook.ISBN)
                 {
-                    RemoveRental(BookstoreData.BookInvoices[i].ID);
+                    RemoveSale(BookstoreData.BookInvoices[i].ID);
                 }
             } 
         }
 
 
-        public Rental GetRental(int rentalISBN)
+        public Sale GetSale(int saleISBN)
         {
             for (int i = 0; i < BookstoreData.BookInvoices.Count; i++)
             {
-                if (BookstoreData.BookInvoices[i].ID == rentalISBN)
+                if (BookstoreData.BookInvoices[i].ID == saleISBN)
                 {
                     return BookstoreData.BookInvoices[i];
                 }
@@ -60,7 +60,7 @@ namespace BookstoreLogic.LogicImplementations
             return null;
         }
 
-        public List<Rental> GetAllInvoices()
+        public List<Sale> GetAllInvoices()
         {
             return BookstoreData.BookInvoices;
         }

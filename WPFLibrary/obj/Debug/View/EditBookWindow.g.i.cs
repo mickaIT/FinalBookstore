@@ -92,7 +92,7 @@ namespace WPFBookstore {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFLibrary;component/view/editbookwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFBookstore;component/view/editbookwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\View\EditBookWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

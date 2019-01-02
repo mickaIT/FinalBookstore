@@ -1,0 +1,20 @@
+﻿WPFBookstore
+
+
+winexe
+C#
+.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\
+WPFBookstore
+none
+false
+DEBUG;TRACE
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\App.xaml
+8283355285
+
+241209537859
+141842874308
+View\AddBookWindow.xaml;View\BookSellingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\SellResultWindow.xaml;
+
+False
+

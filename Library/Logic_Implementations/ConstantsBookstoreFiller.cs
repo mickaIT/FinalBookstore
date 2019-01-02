@@ -26,11 +26,11 @@ namespace BookstoreLogic.LogicImplementations
         
         private void FillInvoices(BookstoreState state)
         {
-            state.BookInvoices.Add(new Rental(state.BookstoreBooks[1]));
-            state.BookInvoices.Add(new Rental(state.BookstoreBooks[3]));
-            state.BookInvoices.Add(new Rental(state.BookstoreBooks[5]));
-            state.BookInvoices.Add(new Rental(state.BookstoreBooks[0]));
-            state.BookInvoices.Add(new Rental(state.BookstoreBooks[4]));
+            state.BookInvoices.Add(new Sale(state.BookstoreBooks[1]));
+            state.BookInvoices.Add(new Sale(state.BookstoreBooks[3]));
+            state.BookInvoices.Add(new Sale(state.BookstoreBooks[5]));
+            state.BookInvoices.Add(new Sale(state.BookstoreBooks[0]));
+            state.BookInvoices.Add(new Sale(state.BookstoreBooks[4]));
         }
     }
 }

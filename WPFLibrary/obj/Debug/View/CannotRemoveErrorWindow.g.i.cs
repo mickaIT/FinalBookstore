@@ -68,7 +68,7 @@ namespace WPFBookstore {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFLibrary;component/view/cannotremoveerrorwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFBookstore;component/view/cannotremoveerrorwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\View\CannotRemoveErrorWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

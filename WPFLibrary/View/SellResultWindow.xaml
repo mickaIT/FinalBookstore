@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBookstore"
         mc:Ignorable="d"
-        Title="Sell result" MinHeight ="250" MinWidth="320" Height="250" Width="320" MaxHeight="250" MaxWidth="320">
+        Title="Sale result" MinHeight ="250" MinWidth="320" Height="250" Width="320" MaxHeight="250" MaxWidth="320">
 
 
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
