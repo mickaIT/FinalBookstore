@@ -8,7 +8,7 @@
         Title="BookstoreManager" MinHeight ="450" MinWidth ="820" Height="450" Width="820">
 
 	
-	<Border Padding="10">
+	<Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
 
         
         <!-- Overall window grid -->
@@ -62,7 +62,7 @@
 					<StackPanel Grid.Column="0">
 						<Button x:Name="AddButton" Click="AddButton_Click" Margin="10 2 20 10" Grid.Column="0" Content="Add" />
                         <Button x:Name="EditButton" Click="EditButton_Click" Margin="10 0 20 10" Grid.Column="0" Content="Edit" />
-                        <Button x:Name="RentBookButton" Click="RentBookButton_Click" Margin="10 0 20 10" Grid.Column="0" Content="Rent Book" />
+                        <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="10 0 20 10" Grid.Column="0" Content="Sell Book" />
 						<Button x:Name="ReturnBookButton" Click="ReturnBookButton_Click" Margin="10 0 20 2" Grid.Column="0" Content="Return Book" />
 					</StackPanel>
 

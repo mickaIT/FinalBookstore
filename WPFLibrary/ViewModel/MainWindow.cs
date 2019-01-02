@@ -14,17 +14,17 @@ namespace WPFBookstore
             ShowList();
         }
 
-        public void RentReturn(bool success)
+        public void SellReturn(bool success)
         {
             ShowList();
 
             if (success)
             {
                 /* Success */
-                if (rentResultWindow == null || !rentResultWindow.IsLoaded)
+                if (sellResultWindow == null || !sellResultWindow.IsLoaded)
                 {
-                    rentResultWindow = new RentResultWindow(RentResultType.RentSuccess);
-                    rentResultWindow.Show();
+                    sellResultWindow = new SellResultWindow(SellResultType.SellSuccess);
+                    sellResultWindow.Show();
                 }
             }
         }
@@ -105,9 +105,9 @@ namespace WPFBookstore
         #endregion
 
 
-        /* Renting books */
+        /* Selling books */
         #region
-        private void RentBookButton_Click(object sender, RoutedEventArgs e)
+        private void SellBookButton_Click(object sender, RoutedEventArgs e)
         {
             object selection = DataContextContainer.SelectedItem;
 
@@ -118,19 +118,19 @@ namespace WPFBookstore
                 if (book.State != BookState.Available)
                 {
                     /* Error */
-                    if (rentResultWindow == null || !rentResultWindow.IsLoaded)
+                    if (sellResultWindow == null || !sellResultWindow.IsLoaded)
                     {
-                        rentResultWindow = new RentResultWindow(RentResultType.CannotSell);
-                        rentResultWindow.Show();
+                        sellResultWindow = new SellResultWindow(SellResultType.CannotSell);
+                        sellResultWindow.Show();
                     }
                 }
                 else
                 {
-                    /* Try to rent the book */
-                    if (bookRentingWindow == null || !bookRentingWindow.IsLoaded)
+                    /* Try to sell the book */
+                    if (bookSellingWindow == null || !bookSellingWindow.IsLoaded)
                     {
-                        bookRentingWindow = new BookRentingWindow(libService, book, RentReturn);
-                        bookRentingWindow.Show();
+                        bookSellingWindow = new BookSellingWindow(libService, book, SellReturn);
+                        bookSellingWindow.Show();
                     }
                 }
             }
@@ -269,7 +269,7 @@ namespace WPFBookstore
                         RemoveAllButton.Content = "Remove All Books";
 
                         AddButton.Visibility = Visibility.Visible;
-                        RentBookButton.Visibility = Visibility.Visible;
+                        SellBookButton.Visibility = Visibility.Visible;
                         ReturnBookButton.Visibility = Visibility.Visible;
                         EditButton.Visibility = Visibility.Visible;
 
@@ -286,7 +286,7 @@ namespace WPFBookstore
                         RemoveAllButton.Content = "";
 
                         AddButton.Visibility = Visibility.Hidden;
-                        RentBookButton.Visibility = Visibility.Hidden;
+                        SellBookButton.Visibility = Visibility.Hidden;
                         ReturnBookButton.Visibility = Visibility.Hidden;
                         EditButton.Visibility = Visibility.Hidden;
 
@@ -304,7 +304,7 @@ namespace WPFBookstore
                         RemoveAllButton.Content = "";
 
                         AddButton.Visibility = Visibility.Hidden;
-                        RentBookButton.Visibility = Visibility.Hidden;
+                        SellBookButton.Visibility = Visibility.Hidden;
                         ReturnBookButton.Visibility = Visibility.Hidden;
                         EditButton.Visibility = Visibility.Hidden;
 

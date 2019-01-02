@@ -55,12 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\BookRentingWindow.cs" />
+    <Compile Include="ViewModel\BookSellingWindow.cs" />
     <Compile Include="ViewModel\BookReturnResultWindow.cs" />
     <Compile Include="ViewModel\ModificationResultWindow.cs" />
-    <Compile Include="ViewModel\RentResultWindow.cs" />
-    <Compile Include="View\BookRentingWindow.xaml.cs">
-      <DependentUpon>BookRentingWindow.xaml</DependentUpon>
+    <Compile Include="ViewModel\SellResultWindow.cs" />
+    <Compile Include="View\BookSellingWindow.xaml.cs">
+      <DependentUpon>BookSellingWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BookReturnResultWindow.xaml.cs">
       <DependentUpon>BookReturnResultWindow.xaml</DependentUpon>
@@ -68,14 +68,14 @@
     <Compile Include="View\ModificationResultWindow.xaml.cs">
       <DependentUpon>ModificationResultWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RentResultWindow.xaml.cs">
-      <DependentUpon>RentResultWindow.xaml</DependentUpon>
+    <Compile Include="View\SellResultWindow.xaml.cs">
+      <DependentUpon>SellResultWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AddBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BookRentingWindow.xaml">
+    <Page Include="View\BookSellingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,7 +120,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RentResultWindow.xaml">
+    <Page Include="View\SellResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

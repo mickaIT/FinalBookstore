@@ -2,9 +2,9 @@
 
 namespace WPFBookstore
 {
-    public partial class RentResultWindow : Window
+    public partial class SellResultWindow : Window
     {
-        public RentResultWindow(RentResultType type)
+        public SellResultWindow(SellResultType type)
         {
             InitializeComponent();
             DisplayMessage(type);
@@ -12,9 +12,9 @@ namespace WPFBookstore
     }
 
 
-    public enum RentResultType
+    public enum SellResultType
     {
-        RentSuccess,
+        SellSuccess,
         CannotSell,
     }
 }

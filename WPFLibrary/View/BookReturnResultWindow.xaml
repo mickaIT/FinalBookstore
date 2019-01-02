@@ -8,7 +8,7 @@
         Title="Returning result" MinHeight ="250" MinWidth="320" Height="250" Width="320" MaxHeight="250" MaxWidth="320">
 
     
-    <Border Padding="10">
+    <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
         <StackPanel>
             <!-- Message -->
             <TextBlock x:Name="MessageBlock" TextWrapping="Wrap"  FontSize="18px" Text="Result message" HorizontalAlignment="Center" Margin="20 0 20 0"/>

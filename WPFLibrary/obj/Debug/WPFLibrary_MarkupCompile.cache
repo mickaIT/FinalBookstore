@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\App.xaml
-82015876255
+8283355285
 
-201500102306
+20-429703462
 141842874308
-View\AddBookWindow.xaml;View\BookRentingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\RentResultWindow.xaml;
+View\AddBookWindow.xaml;View\BookSellingWindow.xaml;View\BookReturnResultWindow.xaml;View\CannotRemoveErrorWindow.xaml;View\EditBookWindow.xaml;View\MainWindow.xaml;View\ModificationResultWindow.xaml;View\SellResultWindow.xaml;
 
 False
 

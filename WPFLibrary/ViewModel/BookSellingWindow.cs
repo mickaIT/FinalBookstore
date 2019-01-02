@@ -4,22 +4,22 @@ using BookstoreLogic.Data;
 
 namespace WPFBookstore
 {
-    public partial class BookRentingWindow : Window
+    public partial class BookSellingWindow : Window
     {
-        private int rentedBookId;
+        private int soldBookId;
 
         private void SetupWindow(Book book)
         {
-            rentedBookId = book.ID;
+            soldBookId = book.ID;
         }
 
 
         /* Buttons */
         #region
-        private void RentBookButton_Click(object sender, RoutedEventArgs e)
+        private void SellBookButton_Click(object sender, RoutedEventArgs e)
         {
             try { 
-                libService.AddRental(rentedBookId);
+                libService.AddRental(soldBookId);
                 windowCallback(true);
                 this.Close();
             }

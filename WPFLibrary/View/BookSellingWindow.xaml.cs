@@ -5,12 +5,12 @@ using BookstoreLogic.Services;
 
 namespace WPFBookstore
 {
-    public partial class BookRentingWindow : Window
+    public partial class BookSellingWindow : Window
     {
         BookstoreDataService libService;
         Action<bool> windowCallback;
 
-        public BookRentingWindow(BookstoreDataService service, Book book, Action<bool> callback)
+        public BookSellingWindow(BookstoreDataService service, Book book, Action<bool> callback)
         {
             libService = service;
             windowCallback = callback;

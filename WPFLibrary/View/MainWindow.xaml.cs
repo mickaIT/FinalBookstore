@@ -13,8 +13,8 @@ namespace WPFBookstore
 
         CannotRemoveErrorWindow removalErrorWindow = null;
         BookReturnResultWindow bookReturnResultWindow = null;
-        BookRentingWindow bookRentingWindow = null;
-        RentResultWindow rentResultWindow = null;
+        BookSellingWindow bookSellingWindow = null;
+        SellResultWindow sellResultWindow = null;
 
 
         public MainWindow()

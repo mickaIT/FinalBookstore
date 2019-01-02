@@ -2,18 +2,18 @@
 
 namespace WPFBookstore
 {
-    public partial class RentResultWindow : Window
+    public partial class SellResultWindow : Window
     {
-        private void DisplayMessage(RentResultType type)
+        private void DisplayMessage(SellResultType type)
         {
             switch (type)
             {
-                case RentResultType.RentSuccess:
+                case SellResultType.SellSuccess:
                     {
-                        MessageBlock.Text = "Book rented successfully.";
+                        MessageBlock.Text = "Book sold successfully.";
                         break;
                     }
-                case RentResultType.CannotSell:
+                case SellResultType.CannotSell:
                     {
                         MessageBlock.Text = "Error. This book is sold.";
                         break;
