@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBookstore"
         mc:Ignorable="d"
-        Title="Adding Book" MinHeight ="300" MinWidth="400" Height="300" Width="400">
+        Title="Adding Book" MinHeight ="350" MinWidth="400" Height="300" Width="400">
 
 
-    <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+    <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Margin="0,0,-0.4,-47.6">
         <StackPanel>
             <!-- Window Title-->
             <TextBlock Text="Adding new book" Margin="0 10" FontFamily="Stencil" />
@@ -24,6 +24,10 @@
             <!-- Genre -->
             <TextBlock Text="Genre" Margin="0 10 0 0" />
             <TextBox x:Name="GenreText" Padding="2" />
+
+            <!-- Count -->
+            <TextBlock Text="Count" Margin="0 10 0 0" />
+            <TextBox x:Name="CountText" Padding="2" />
 
             <!-- Buttons -->
             <Button x:Name="AddBookButton" Click="AddBookButton_Click" Margin="0 20 200 10" Grid.Column="0" Content="Add Book"/>

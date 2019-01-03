@@ -136,7 +136,7 @@ namespace WPFBookstore
             }
         }
 
-        private void ReturnBookButton_Click(object sender, RoutedEventArgs e)
+        private void ChangeStatusButton_Click(object sender, RoutedEventArgs e)
         {
             object selection = DataContextContainer.SelectedItem;
 
@@ -147,10 +147,9 @@ namespace WPFBookstore
                 if (book.State == BookState.Available)
                 {
                     /* Error */ 
-                    if (bookReturnResultWindow == null || !bookReturnResultWindow.IsLoaded)
+                    if (bookChangeStatusResultWindow == null || !bookChangeStatusResultWindow.IsLoaded)
                     {
-                        bookReturnResultWindow = new BookReturnResultWindow(false);
-                        bookReturnResultWindow.Show();
+                        bookChangeStatusResultWindow = new BookChangeStatusResultWindow(false);
                     }
                 }
                 else
@@ -158,10 +157,10 @@ namespace WPFBookstore
                     bookstoreService.RemoveSale(book);
 
                     /* Success */
-                    if (bookReturnResultWindow == null || !bookReturnResultWindow.IsLoaded)
+                    if (bookChangeStatusResultWindow == null || !bookChangeStatusResultWindow.IsLoaded)
                     {
-                        bookReturnResultWindow = new BookReturnResultWindow(true);
-                        bookReturnResultWindow.Show();
+                        bookChangeStatusResultWindow = new BookChangeStatusResultWindow(true);
+                        bookChangeStatusResultWindow.Show();
                     }
                 }
 
@@ -270,7 +269,6 @@ namespace WPFBookstore
 
                         AddButton.Visibility = Visibility.Visible;
                         SellBookButton.Visibility = Visibility.Visible;
-                        ReturnBookButton.Visibility = Visibility.Visible;
                         EditButton.Visibility = Visibility.Visible;
 
                         RemoveButton.Visibility = Visibility.Visible;
@@ -287,7 +285,7 @@ namespace WPFBookstore
 
                         AddButton.Visibility = Visibility.Hidden;
                         SellBookButton.Visibility = Visibility.Hidden;
-                        ReturnBookButton.Visibility = Visibility.Hidden;
+
                         EditButton.Visibility = Visibility.Hidden;
 
                         RemoveButton.Visibility = Visibility.Hidden;
@@ -305,7 +303,7 @@ namespace WPFBookstore
 
                         AddButton.Visibility = Visibility.Hidden;
                         SellBookButton.Visibility = Visibility.Hidden;
-                        ReturnBookButton.Visibility = Visibility.Hidden;
+                   
                         EditButton.Visibility = Visibility.Hidden;
 
                         RemoveButton.Visibility = Visibility.Hidden;

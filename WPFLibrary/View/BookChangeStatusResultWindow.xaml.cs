@@ -2,9 +2,9 @@
 
 namespace WPFBookstore
 {
-    public partial class BookReturnResultWindow : Window
+    public partial class BookChangeStatusResultWindow : Window
     {
-        public BookReturnResultWindow(bool success)
+        public BookChangeStatusResultWindow(bool success)
         {
             InitializeComponent();
             DisplayMessage(success);

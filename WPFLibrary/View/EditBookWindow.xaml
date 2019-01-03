@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBookstore"
         mc:Ignorable="d"
-        Title="Editing Book" MinHeight ="300" MinWidth="400" Height="300" Width="400">
+        Title="Editing Book" MinHeight ="300" MinWidth="400" Height="355.8" Width="400">
 
 
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
@@ -24,6 +24,9 @@
             <!-- Genre -->
             <TextBlock Text="Genre" Margin="0 10 0 0" />
             <TextBox x:Name="GenreText" Padding="2" />
+            
+            <!-- Count -->
+
             <Button x:Name="UpdateBookButton" Click="UpdateBookButton_Click" Margin="0,20,199.6,10" Content="Update Book" HorizontalAlignment="Right" Width="174"/>
 
             <!-- Buttons -->

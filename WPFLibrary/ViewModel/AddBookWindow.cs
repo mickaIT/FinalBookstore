@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace WPFBookstore
 {
@@ -13,9 +14,9 @@ namespace WPFBookstore
 
         private void AddBookButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!CheckIfEmpty(TitleText.Text) && !CheckIfEmpty(AuthorText.Text) && !CheckIfEmpty(GenreText.Text))
+            if (!CheckIfEmpty(TitleText.Text) && !CheckIfEmpty(AuthorText.Text) && !CheckIfEmpty(GenreText.Text) && !CheckIfEmpty(CountText.Text))
             {
-                bookstoreService.AddBook(TitleText.Text, AuthorText.Text, GenreText.Text);
+                bookstoreService.AddBook(TitleText.Text, AuthorText.Text, GenreText.Text, Int32.Parse(CountText.Text));
                 windowCallback();
 
                 //Display success message

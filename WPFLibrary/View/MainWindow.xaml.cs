@@ -12,7 +12,7 @@ namespace WPFBookstore
         EditBookWindow editBookWindow = null;
 
         CannotRemoveErrorWindow removalErrorWindow = null;
-        BookReturnResultWindow bookReturnResultWindow = null;
+        BookChangeStatusResultWindow bookChangeStatusResultWindow = null;
         BookSellingWindow bookSellingWindow = null;
         SellResultWindow sellResultWindow = null;
 

@@ -31,7 +31,7 @@ namespace BookstoreLogic.Data
         /* Called just before removing this sale from the list */
         public void EndSale()
         {
-            SoldBook.ReturnBook();
+            SoldBook.ChangeStatus();
         }
 
 

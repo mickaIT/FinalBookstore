@@ -78,8 +78,8 @@
     <Compile Include="View\BookSellingWindow.xaml.cs">
       <DependentUpon>BookSellingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BookReturnResultWindow.xaml.cs">
-      <DependentUpon>BookReturnResultWindow.xaml</DependentUpon>
+    <Compile Include="View\BookChangeStatusResultWindow.xaml.cs">
+      <DependentUpon>BookChangeStatusResultWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ModificationResultWindow.xaml.cs">
       <DependentUpon>ModificationResultWindow.xaml</DependentUpon>
@@ -95,7 +95,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BookReturnResultWindow.xaml">
+    <Page Include="View\BookChangeStatusResultWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -53,9 +53,9 @@ namespace BookstoreLogic.Services
         {
             bookstoreUOW.GetBooksDao.AddBook(book);
         }
-        public void AddBook(string title, string author, string genre)
+        public void AddBook(string title, string author, string genre, int count)
         {
-            bookstoreUOW.GetBooksDao.AddBook(new Book(title, author, genre));
+            bookstoreUOW.GetBooksDao.AddBook(new Book(title, author, genre, count));
         }
 
         public void UpdateBook(BookUpdateData data)
@@ -109,9 +109,9 @@ namespace BookstoreLogic.Services
         {
             bookstoreUOW.GetBooksDao.SellBook(id);
         }
-        public void ReturnBook(int id)
+        public void ChangeStatus(int id)
         {
-            bookstoreUOW.GetBooksDao.ReturnBook(id);
+            bookstoreUOW.GetBooksDao.ChangeStatus(id);
         }
         #endregion
 

@@ -10,8 +10,8 @@
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" >
         <Grid>
             <StackPanel RenderTransformOrigin="0.525,0.358">
-                <Label x:Name="DataContextTitle" Content="Add more books" FontSize="20" HorizontalContentAlignment="Center" Margin="87,0,86.6,0" Height="46" Width="300" FontFamily="Stencil" FontWeight="Bold"/>
-                <Grid Margin="0,20,-0.4,0" Height="272">
+                <Label x:Name="DataContextTitle" Content="Are you sure you want to sell this book?" FontSize="20" HorizontalContentAlignment="Center" Margin="0,0,9.6,0" Height="45" FontFamily="Stencil" FontWeight="Bold"/>
+                <Grid Margin="0,20,-0.4,0" Height="303">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="47*"/>
                         <RowDefinition Height="51*"/>
@@ -22,30 +22,13 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Buttons -->
-                    <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="10,81.6,0,22" Content="Sell Books" HorizontalAlignment="Left" Width="223" RenderTransformOrigin="0.653,0.52" Grid.Row="1" Grid.Column="1" BorderThickness="1" FontWeight="Bold">
+                    <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="128,118,0,116" Content="Sell Books" HorizontalAlignment="Left" Width="223" RenderTransformOrigin="0.653,0.52" BorderThickness="1" FontWeight="Bold" Grid.ColumnSpan="2" Grid.RowSpan="2">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                     </Button>
-                    <ListView HorizontalAlignment="Left" Height="182" VerticalAlignment="Top" Width="230" Grid.RowSpan="2" Margin="0,10,0,0">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                    <ListView Grid.Column="1" HorizontalAlignment="Left" Height="182" Margin="10,10,0,0" VerticalAlignment="Top" Width="223" Grid.RowSpan="2">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                    <Button Content="Add to the invoice" HorizontalAlignment="Left" Margin="0,81.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="230" Height="38"/>
                 </Grid>
             </StackPanel>
-            <Label x:Name="DataContextTitle_Copy" Content="Books catalog" FontSize="18px" HorizontalContentAlignment="Center" Margin="10,39,258.6,261.4" FontFamily="Stencil"/>
-            <Label x:Name="DataContextTitle_Copy1" Content="Current invoice" FontSize="18px" HorizontalContentAlignment="Center" Margin="259,39,9.6,261.4" FontFamily="Stencil"/>
         </Grid>
     </Border>
 </Window>

@@ -19,6 +19,6 @@ namespace BookstoreLogic.Logic
         List<Book> GetBooksByState(BookState state);
        
         void SellBook(int bookISBN);
-        void ReturnBook(int bookISBN);
+        void ChangeStatus(int bookISBN);
     }
 }

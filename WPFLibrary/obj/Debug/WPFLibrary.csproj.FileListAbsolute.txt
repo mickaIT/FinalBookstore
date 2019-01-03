@@ -110,14 +110,12 @@ C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLib
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\bin\Debug\LibraryLogic.dll.config
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFLibrary.csprojAssemblyReference.cache
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddBookWindow.g.cs
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookReturnResultWindow.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditBookWindow.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\MainWindow.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\ModificationResultWindow.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\App.g.cs
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\AddBookWindow.baml
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookReturnResultWindow.baml
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\CannotRemoveErrorWindow.baml
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\EditBookWindow.baml
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\MainWindow.baml
@@ -138,3 +136,5 @@ C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLib
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFBookstore.Properties.Resources.resources
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFBookstore.exe
 C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\WPFBookstore.pdb
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookChangeStatusResultWindow.g.cs
+C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\WPFLibrary\obj\Debug\View\BookChangeStatusResultWindow.baml

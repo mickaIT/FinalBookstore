@@ -55,11 +55,10 @@
 
                 <Button x:Name="AddButton" Click="AddButton_Click" Margin="0,45,215.6,68" Content="Add" Grid.Column="1" />
                 <Button x:Name="EditButton" Click="EditButton_Click" Margin="0,113,215.6,0" Content="Edit" HorizontalAlignment="Right" Width="178" Grid.Column="1" />
-                <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="0,79,215.6,34" Content="Sell Book" HorizontalAlignment="Right" Width="178" Grid.Column="1" />
+                <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="0,79,13.6,34" Content="Sell Book" HorizontalAlignment="Right" Width="380" Grid.Column="1" />
 
                 <Button x:Name="RemoveButton" Click="RemoveButton_Click" Margin="204,112,13.6,1" Content="Remove" Grid.Column="1" />
                 <Button x:Name="RemoveAllButton" Click="RemoveAllButton_Click" Margin="204,45,13.6,68" Grid.Column="1" Content="Remove All" />
-                <Button x:Name="ReturnBookButton" Click="ReturnBookButton_Click" Margin="204,79,13.6,34" Content="Return Book" Grid.Column="1" />
                 <TextBlock Text="Bookstore Lists" Margin="10,20,0,0" HorizontalAlignment="Left" Width="382" VerticalAlignment="Top" Height="16" FontFamily="Stencil" FontSize="14" />
                 <StackPanel HorizontalAlignment="Left" Height="120" Margin="1,26,0,-8" VerticalAlignment="Top" Width="362" Grid.Column="1"/>
                 <TextBlock x:Name="ControlsText" Text="Managing Data" Margin="392,26,-9.4,93" FontFamily="Stencil" FontSize="14" TextWrapping="Wrap" Grid.ColumnSpan="2" />

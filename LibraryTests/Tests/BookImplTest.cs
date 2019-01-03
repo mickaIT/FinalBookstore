@@ -29,7 +29,7 @@ namespace BookstoreTests
         public void AddBookTest()
         {
             //given
-            Book book = new Book("Magic Title", "Harry Potter", "horror");
+            Book book = new Book("Magic Title", "Harry Potter", "horror",2);
             //when
             bookDao.AddBook(book);
             //then
@@ -40,9 +40,9 @@ namespace BookstoreTests
         public void GetBookByIdTest()
         {
             //given
-            Book book1 = new Book("Title1", "Tset", "Ttse");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title3", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Tset", "Ttse",3);
+            Book book2 = new Book("Title2", "Tset", "Ttse",3);
+            Book book3 = new Book("Title3", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -54,9 +54,9 @@ namespace BookstoreTests
         public void GetBookByAuthorTest()
         {
             //given
-            Book book1 = new Book("Title1", "Tset", "Ttse");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title3", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Tset", "Ttse",1);
+            Book book2 = new Book("Title2", "Tset", "Ttse",1);
+            Book book3 = new Book("Title3", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -72,9 +72,9 @@ namespace BookstoreTests
         public void GetBookByTitleTest()
         {
             //given
-            Book book1 = new Book("Title1", "Tset", "Ttse");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title1", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Tset", "Ttse",1);
+            Book book2 = new Book("Title2", "Tset", "Ttse",1);
+            Book book3 = new Book("Title1", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -90,9 +90,9 @@ namespace BookstoreTests
         public void GetBookByGenreTest()
         {
             //given
-            Book book1 = new Book("Title1", "Tset", "AaA");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title3", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Tset", "AaA",1);
+            Book book2 = new Book("Title2", "Tset", "Ttse",1);
+            Book book3 = new Book("Title3", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -107,7 +107,7 @@ namespace BookstoreTests
         public void SellBookTest()
         {
             //given
-            Book book1 = new Book("Title1", "Steve Jobs", "fantasy");
+            Book book1 = new Book("Title1", "Steve Jobs", "fantasy",1);
             bookDao.AddBook(book1);
             //when
             bookDao.SellBook(book1.ISBN);
@@ -116,14 +116,14 @@ namespace BookstoreTests
         }
 
         [TestMethod()]
-        public void ReturnBookTest()
+        public void ChangeStatusTest()
         {
             //given
-            Book book1 = new Book("Title1", "George Washington", "horror");
+            Book book1 = new Book("Title1", "George Washington", "horror",1);
             bookDao.AddBook(book1);
             //when
             bookDao.SellBook(book1.ISBN);
-            bookDao.ReturnBook(book1.ISBN);
+            bookDao.ChangeStatus(book1.ISBN);
             //then
             Assert.AreEqual(bookDao.GetBook(book1.ISBN).State, BookState.Available);
         }
@@ -132,9 +132,9 @@ namespace BookstoreTests
         public void GetBookByStateTest()
         {
             //given
-            Book book1 = new Book("Title1", "Test", "Ttse");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title3", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Test", "Ttse",1);
+            Book book2 = new Book("Title2", "Tset", "Ttse",1);
+            Book book3 = new Book("Title3", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -151,9 +151,9 @@ namespace BookstoreTests
         public void RemoveBookTest()
         {
             //given
-            Book book1 = new Book("Title1", "Test", "Ttse");
-            Book book2 = new Book("Title2", "Tset", "Ttse");
-            Book book3 = new Book("Title3", "Le", "Ttse");
+            Book book1 = new Book("Title1", "Test", "Ttse",1);
+            Book book2 = new Book("Title2", "Tset", "Ttse",1);
+            Book book3 = new Book("Title3", "Le", "Ttse",1);
             bookDao.AddBook(book1);
             bookDao.AddBook(book2);
             bookDao.AddBook(book3);
@@ -170,7 +170,7 @@ namespace BookstoreTests
         public void CanRemoveBookTest()
         {
             //given
-            Book book1 = new Book("Title1", "Test", "Ttse");
+            Book book1 = new Book("Title1", "Test", "Ttse",1);
             bookDao.AddBook(book1);
             //when
             bookDao.SellBook(book1.ISBN);

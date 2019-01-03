@@ -2,14 +2,14 @@
 
 namespace WPFBookstore
 {
-    public partial class BookReturnResultWindow : Window
+    public partial class BookChangeStatusResultWindow : Window
     {
         private void DisplayMessage(bool success)
         {
             if (success)
-                MessageBlock.Text = "Book returned successfully.";
+                MessageBlock.Text = "Book status changed successfully.";
             else
-                MessageBlock.Text = "Error. This book is not currently unavailable.";
+                MessageBlock.Text = "Error. This book is currently \n unavailable.";
         }
 
 

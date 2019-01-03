@@ -20,7 +20,21 @@ namespace BookstoreLogic.LogicImplementations
 
         public void AddBook(Book book)
         {
-            BookstoreData.BookstoreBooks.Add(book);
+            Book existingBook = BookstoreData.BookstoreBooks.Find(b => b.Title.Equals(book.Title) && b.Author.Equals(book.Author));
+
+            if (existingBook != null)
+           {
+                existingBook.Count += book.Count;
+                existingBook.State = BookState.Available;
+
+           } else
+           {
+                BookstoreData.BookstoreBooks.Add(book);
+           }
+
+                
+            
+
         }
 
         public void UpdateBook(BookUpdateData bookData)
@@ -94,9 +108,9 @@ namespace BookstoreLogic.LogicImplementations
             GetBook(bookISBN)?.SellBook();
         }
 
-        public void ReturnBook(int bookISBN)
+        public void ChangeStatus(int bookISBN)
         {
-            GetBook(bookISBN)?.ReturnBook();
+            GetBook(bookISBN)?.ChangeStatus();
         }
     }
 }
