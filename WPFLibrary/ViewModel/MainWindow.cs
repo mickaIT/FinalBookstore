@@ -184,12 +184,11 @@ namespace WPFBookstore
                         {
                             Book book = (Book)selection;
 
-                            if (bookstoreService.CanRemoveBook(book.ISBN))
-                            {
+                            try { 
                                 bookstoreService.RemoveBook(book);
                                 Refresh();
                             }
-                            else if (removalErrorWindow == null || !removalErrorWindow.IsLoaded)
+                            catch
                             {
                                 removalErrorWindow = new CannotRemoveErrorWindow(book);
                                 removalErrorWindow.Show();

@@ -67,10 +67,6 @@ namespace BookstoreLogic.Services
             bookstoreUOW.GetBooksDao.UpdateBook(new BookUpdateData(id, title, author, genre));
         }
 
-        public bool CanRemoveBook(int id)
-        {
-            return bookstoreUOW.GetBooksDao.CanRemoveBook(id);
-        }
         public void RemoveBook(int id)
         {
             bookstoreUOW.GetBooksDao.RemoveBook(id);

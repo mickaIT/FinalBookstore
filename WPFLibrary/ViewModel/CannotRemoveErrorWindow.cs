@@ -12,7 +12,7 @@ namespace WPFBookstore
                 + book.Title +
                 "' written by "
                 + book.Author +
-                " because it's still sold to someone.";
+                " because it's unavailable";
 
             MessageBlock.Text = message;
         }

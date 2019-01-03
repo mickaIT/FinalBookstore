@@ -37,8 +37,6 @@ namespace BookstoreLogic.Services
             for (int i = BookstoreData.BookstoreBooks.Count - 1; i >= 0; i--)
             {
                 int bookISBN = BookstoreData.BookstoreBooks[i].ISBN;
-
-                if (booksDao.CanRemoveBook(bookISBN))
                     booksDao.RemoveBook(bookISBN);
             }
         }

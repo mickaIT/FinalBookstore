@@ -42,13 +42,7 @@ namespace BookstoreLogic.LogicImplementations
             GetBook(bookData.bookId)?.UpdateBookData(bookData);
         }
 
-        public bool CanRemoveBook(int bookISBN)
-        {
-            if (GetBook(bookISBN)?.State == BookState.Available)
-                return true;
 
-            return false;
-        }
 
         public void RemoveBook(int bookISBN)
         {

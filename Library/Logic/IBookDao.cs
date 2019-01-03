@@ -8,7 +8,6 @@ namespace BookstoreLogic.Logic
         void AddBook(Book book);
         void UpdateBook(BookUpdateData bookData);
 
-        bool CanRemoveBook(int bookISBN);
         void RemoveBook(int bookISBN);
 
         Book GetBook(int bookISBN);

@@ -166,17 +166,6 @@ namespace BookstoreTests
             Assert.IsTrue(result.Contains(book3));
         }
 
-        [TestMethod()]
-        public void CanRemoveBookTest()
-        {
-            //given
-            Book book1 = new Book("Title1", "Test", "Ttse",1);
-            bookDao.AddBook(book1);
-            //when
-            bookDao.SellBook(book1.ISBN);
-            //then
-            Assert.IsFalse(bookDao.CanRemoveBook(book1.ISBN));
-        }
 
     }
 }
