@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBookstore"
         mc:Ignorable="d"
-        Title="BookstoreManager" MinHeight ="450" MinWidth ="820" Height="462" Width="820">
+        Title="BookstoreManager" MinHeight ="450" MinWidth ="820" Height="462" Width="820"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
 
-
+        
     <Border Padding="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
 
 
@@ -50,8 +51,8 @@
 
 
                 <!-- Second column-->
-                <Button x:Name="BooksButton" Click="BooksButton_Click" Margin="10,45,10,49" Content="Books" />
-                <Button x:Name="InvoicesButton" Click="InvoicesButton_Click" Margin="10,93,10,2" Content="Invoices" />
+                <Button x:Name="BooksButton" Command="{Binding BooksButtonCommand}" Margin="10,45,10,49" Content="Books" />
+                <Button x:Name="InvoicesButton" Command="{Binding InvoiceButtonCommand}" Margin="10,93,10,2" Content="Invoices" />
 
                 <Button x:Name="AddButton" Click="AddButton_Click" Margin="0,45,215.6,68" Content="Add" Grid.Column="1" />
                 <Button x:Name="EditButton" Click="EditButton_Click" Margin="0,113,215.6,0" Content="Edit" HorizontalAlignment="Right" Width="178" Grid.Column="1" />
@@ -61,7 +62,7 @@
                 <Button x:Name="RemoveAllButton" Click="RemoveAllButton_Click" Margin="204,45,13.6,68" Grid.Column="1" Content="Remove All" />
                 <TextBlock Text="Bookstore Lists" Margin="10,20,0,0" HorizontalAlignment="Left" Width="382" VerticalAlignment="Top" Height="16" FontFamily="Stencil" FontSize="14" />
                 <StackPanel HorizontalAlignment="Left" Height="120" Margin="1,26,0,-8" VerticalAlignment="Top" Width="362" Grid.Column="1"/>
-                <TextBlock x:Name="ControlsText" Text="Managing Data" Margin="392,26,-9.4,93" FontFamily="Stencil" FontSize="14" TextWrapping="Wrap" Grid.ColumnSpan="2" />
+                <TextBlock x:Name="ControlsText" Text="{Binding ControlsText, UpdateSourceTrigger=PropertyChanged}" Margin="392,26,-9.4,93" FontFamily="Stencil" FontSize="14" TextWrapping="Wrap" Grid.ColumnSpan="2" />
 
             </Grid>
 
