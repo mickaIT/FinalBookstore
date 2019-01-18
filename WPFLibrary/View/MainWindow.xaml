@@ -32,8 +32,10 @@
                 </Grid.RowDefinitions>
 
 
-                <Label x:Name="DataContextTitle" FontSize="18px" Margin="19,46,0,315" FontFamily="Stencil" Width="728" HorizontalAlignment="Left" Grid.RowSpan="2"/>
-                <ListBox x:Name="DataContextContainer" SelectionChanged="DataContextContainer_SelectionChanged" VerticalAlignment="Top" Margin="10,28.4,10,0" MinWidth="200" MinHeight="150" Height="171" Grid.Row="1"/>
+                <Label x:Name="DataContextTitle" Content="{Binding DataContextTitleContent, UpdateSourceTrigger=PropertyChanged}" FontSize="18px" Margin="19,46,0,315" FontFamily="Stencil" Width="728" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                <ListBox x:Name="DataContextContainer" ItemsSource="{Binding DataContextContainerItems}" SelectedItem="{Binding DataContextContainerSelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         
+                         VerticalAlignment="Top" Margin="10,28.4,10,0" MinWidth="200" MinHeight="150" Height="171" Grid.Row="1"/>
 
             </Grid>
 
@@ -54,12 +56,12 @@
                 <Button x:Name="BooksButton" Command="{Binding BooksButtonCommand}" Margin="10,45,10,49" Content="Books" />
                 <Button x:Name="InvoicesButton" Command="{Binding InvoiceButtonCommand}" Margin="10,93,10,2" Content="Invoices" />
 
-                <Button x:Name="AddButton" Click="AddButton_Click" Margin="0,45,215.6,68" Content="Add" Grid.Column="1" />
-                <Button x:Name="EditButton" Click="EditButton_Click" Margin="0,113,215.6,0" Content="Edit" HorizontalAlignment="Right" Width="178" Grid.Column="1" />
-                <Button x:Name="SellBookButton" Click="SellBookButton_Click" Margin="0,79,13.6,34" Content="Sell Book" HorizontalAlignment="Right" Width="380" Grid.Column="1" />
+                <Button x:Name="AddButton" Command="{Binding AddButtonCommand}" Visibility="{Binding AddButtonVisibility}" Margin="0,45,215.6,68" Content="Add" Grid.Column="1" />
+                <Button x:Name="EditButton" Command="{Binding EditButtonCommand}" Visibility="{Binding EditButtonVisibility}" Margin="0,113,215.6,0" Content="Edit" HorizontalAlignment="Right" Width="178" Grid.Column="1" />
+                <Button x:Name="SellBookButton" Command="{Binding SellButtonCommand}" Visibility="{Binding SellBookButtonVisibility}" Margin="0,79,13.6,34" Content="Sell Book" HorizontalAlignment="Right" Width="380" Grid.Column="1" />
 
-                <Button x:Name="RemoveButton" Click="RemoveButton_Click" Margin="204,112,13.6,1" Content="Remove" Grid.Column="1" />
-                <Button x:Name="RemoveAllButton" Click="RemoveAllButton_Click" Margin="204,45,13.6,68" Grid.Column="1" Content="Remove All" />
+                <Button x:Name="RemoveButton" Command="{Binding RemoveButtonCommand}" Visibility="{Binding RemoveButtonVisibility}" Margin="204,112,13.6,1" Content="Remove" Grid.Column="1" />
+                <Button x:Name="RemoveAllButton" Command="{Binding RemoveAllButtonCommand}" Visibility="{Binding RemoveAllButtonVisibility}" Margin="204,45,13.6,68" Grid.Column="1" Content="Remove All" />
                 <TextBlock Text="Bookstore Lists" Margin="10,20,0,0" HorizontalAlignment="Left" Width="382" VerticalAlignment="Top" Height="16" FontFamily="Stencil" FontSize="14" />
                 <StackPanel HorizontalAlignment="Left" Height="120" Margin="1,26,0,-8" VerticalAlignment="Top" Width="362" Grid.Column="1"/>
                 <TextBlock x:Name="ControlsText" Text="{Binding ControlsText, UpdateSourceTrigger=PropertyChanged}" Margin="392,26,-9.4,93" FontFamily="Stencil" FontSize="14" TextWrapping="Wrap" Grid.ColumnSpan="2" />

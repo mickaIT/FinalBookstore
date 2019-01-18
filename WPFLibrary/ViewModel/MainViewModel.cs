@@ -1,12 +1,21 @@
+using BookstoreLogic.Data;
 using BookstoreLogic.Services;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
 
 namespace WPFBookstore.ViewModel
 {
+    public enum BookstoreListSelection
+    {
+        Books,
+        Invoices,
+        None,
+    }
 
     public class MainViewModel : ViewModelBase
     {
@@ -53,13 +62,6 @@ namespace WPFBookstore.ViewModel
         }
         #endregion
 
-        public enum BookstoreListSelection
-        {
-            Books,
-            Invoices,
-            None,
-        }
-
         #region
         public void Refresh()
         {
@@ -83,59 +85,174 @@ namespace WPFBookstore.ViewModel
         #endregion
 
 
+        /* Updating buttons when Bookstore List selection changes */
+        #region
+        private void UpdateButtons()
+        {
+            switch (currentLLSelection)
+            {
+                case BookstoreListSelection.Books:
+                {
+                    ControlsText = "Manage Books";
+                    AddButtonContent = "Add Book";
+                    EditButtonContent = "Edit Book";
+                    RemoveButtonContent = "Remove Book";
+                    RemoveAllButtonContent = "Remove All Books";
 
+                    AddButtonVisibility = Visibility.Visible;
+                    SellBookButtonVisibility = Visibility.Visible;
+                    EditButtonVisibility = Visibility.Visible;
 
+                    RemoveButtonVisibility = Visibility.Visible;
+                    RemoveAllButtonVisibility = Visibility.Visible;
+                    break;
+                }
+                case BookstoreListSelection.Invoices:
+                {
+                    ControlsText = "No actions to perform select \"Books\" to manage data";
+                    AddButtonContent = "";
+                    EditButtonContent = "";
+                    RemoveButtonContent = "";
+                    RemoveAllButtonContent = "";
+
+                    AddButtonVisibility = Visibility.Hidden;
+                    SellBookButtonVisibility = Visibility.Hidden;
+
+                    EditButtonVisibility = Visibility.Hidden;
+
+                    RemoveButtonVisibility = Visibility.Hidden;
+                    RemoveAllButtonVisibility = Visibility.Hidden;
+                    break;
+                }
+                case BookstoreListSelection.None:
+                default:
+                {
+                    ControlsText = "";
+                    AddButtonContent = "";
+                    EditButtonContent = "";
+                    RemoveButtonContent = "";
+                    RemoveAllButtonContent = "";
+
+                    AddButtonVisibility = Visibility.Hidden;
+                    SellBookButtonVisibility = Visibility.Hidden;
+
+                    EditButtonVisibility = Visibility.Hidden;
+
+                    RemoveButtonVisibility = Visibility.Hidden;
+                    RemoveAllButtonVisibility = Visibility.Hidden;
+                    break;
+                }
+            }
+        }
+        #endregion
+
+        #region
+        private void ShowList()
+        {
+            DataContextContainerItems = null;
+
+            switch (currentLLSelection)
+            {
+                case BookstoreListSelection.Books:
+                {
+                    DataContextTitleContent = "Books";
+                    DataContextContainerItems = new ObservableCollection<string>(bookstoreService.GetAllBooks().Select(book => book.ToString()));
+                    break;
+                }
+                case BookstoreListSelection.Invoices:
+                {
+                    DataContextTitleContent = "Invoices history";
+                    DataContextContainerItems = new ObservableCollection<string>(bookstoreService.GetAllInvoices().Select(sale => sale.ToString()));
+                    break;
+                }
+                default:
+                {
+                    DataContextTitleContent = "";
+                    break;
+                }
+            }
+        }
+
+        #endregion
 
         /* Adding */
         #region
-        private void AddButton_Click()
+
+        private ICommand _addButtonCommand;
+        public ICommand AddButtonCommand => _addButtonCommand ?? (_addButtonCommand = new RelayCommand(AddButtonLogic));
+
+        private void AddButtonLogic()
         {
             /* Decide what to do basing on current Bookstore List selection */
             switch (currentLLSelection)
             {
                 case BookstoreListSelection.Books:
+                {
+                    if (addBookWindow == null || !addBookWindow.IsLoaded)
                     {
-                        if (addBookWindow == null || !addBookWindow.IsLoaded)
-                        {
-                            addBookWindow = new AddBookWindow(bookstoreService, Refresh);
-                            addBookWindow.Show();
-                        }
-                        break;
+                        addBookWindow = new AddBookWindow(bookstoreService, Refresh);
+                        addBookWindow.Show();
                     }
+                    break;
+                }
                 default:
-                    {
-                        break;
-                    }
+                {
+                    break;
+                }
             }
         }
         #endregion
 
 
         /* Editing */
+
         #region
-        private void EditButton_Click(object sender, RoutedEventArgs e)
+
+
+        private object _dataContextContainerSelectedItem;
+
+        public object DataContextContainerSelectedItem
         {
-            object selection = DataContextContainer.SelectedItem;
+            get => _dataContextContainerSelectedItem;
+            set
+            {
+                _dataContextContainerSelectedItem = value; 
+                RaisePropertyChanged(()=>DataContextContainerSelectedItem);
+            }
+        }
+
+        public void DataContextContainerSelectionChangedCommand()
+        {
+            MessageBox.Show("lol");
+
+        }
+
+        private ICommand _editButtonCommand;
+        public ICommand EditButtonCommand => _editButtonCommand ?? (_editButtonCommand = new RelayCommand(EditButtonLogic));
+
+        private void EditButtonLogic()
+        {
+            object selection = DataContextContainerSelectedItem;
 
             if (selection != null)
             {
                 switch (currentLLSelection)
                 {
                     case BookstoreListSelection.Books:
-                        {
-                            Book book = (Book)selection;
+                    {
+                        Book book = Book.FromString(selection.ToString());
 
-                            if (editBookWindow == null || !editBookWindow.IsLoaded)
-                            {
-                                editBookWindow = new EditBookWindow(bookstoreService, book, Refresh);
-                                editBookWindow.Show();
-                            }
-                            break;
-                        }
-                    default:
+                        if (editBookWindow == null || !editBookWindow.IsLoaded)
                         {
-                            break;
+                            editBookWindow = new EditBookWindow(bookstoreService, book, Refresh);
+                            editBookWindow.Show();
                         }
+                        break;
+                    }
+                    default:
+                    {
+                        break;
+                    }
                 }
             }
         }
@@ -144,9 +261,14 @@ namespace WPFBookstore.ViewModel
 
         /* Selling books */
         #region
-        private void SellBookButton_Click(object sender, RoutedEventArgs e)
+
+        private ICommand _sellButtonCommand;
+        public ICommand SellButtonCommand => _sellButtonCommand ?? (_sellButtonCommand = new RelayCommand(SellBookButtonLogic));
+
+
+        private void SellBookButtonLogic()
         {
-            object selection = DataContextContainer.SelectedItem;
+            object selection = DataContextContainerSelectedItem;
 
             if (selection != null)
             {
@@ -173,9 +295,12 @@ namespace WPFBookstore.ViewModel
             }
         }
 
-        private void ChangeStatusButton_Click(object sender, RoutedEventArgs e)
+        private ICommand _changeStatusButtonCommand;
+        public ICommand ChangeStatusButtonCommand => _changeStatusButtonCommand ?? (_changeStatusButtonCommand = new RelayCommand(ChangeStatusButtonLogic));
+
+        private void ChangeStatusButtonLogic()
         {
-            object selection = DataContextContainer.SelectedItem;
+            object selection = DataContextContainerSelectedItem;
 
             if (selection != null)
             {
@@ -209,175 +334,204 @@ namespace WPFBookstore.ViewModel
 
         /* Removing */
         #region
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+
+        private ICommand _removeButtonCommand;
+        public ICommand RemoveButtonCommand => _removeButtonCommand ?? (_removeButtonCommand = new RelayCommand(RemoveButtonLogic));
+
+        private void RemoveButtonLogic()
         {
-            object selection = DataContextContainer.SelectedItem;
+            object selection = DataContextContainerSelectedItem;
 
             if (selection != null)
             {
                 switch (currentLLSelection)
                 {
                     case BookstoreListSelection.Books:
-                        {
-                            Book book = (Book)selection;
+                    {
+                        Book book = (Book)selection;
 
-                            try
-                            {
-                                bookstoreService.RemoveBook(book);
-                                Refresh();
-                            }
-                            catch
-                            {
-                                removalErrorWindow = new CannotRemoveErrorWindow(book);
-                                removalErrorWindow.Show();
-                            }
-                            break;
-                        }
-                    default:
+                        try
                         {
-                            break;
+                            bookstoreService.RemoveBook(book);
+                            Refresh();
                         }
+                        catch
+                        {
+                            removalErrorWindow = new CannotRemoveErrorWindow(book);
+                            removalErrorWindow.Show();
+                        }
+                        break;
+                    }
+                    default:
+                    {
+                        break;
+                    }
                 }
             }
         }
 
-        private void RemoveAllButton_Click(object sender, RoutedEventArgs e)
+
+        private ICommand _removeAllButtonCommand;
+        public ICommand RemoveAllButtonCommand => _removeAllButtonCommand ?? (_removeAllButtonCommand = new RelayCommand(RemoveAllButtonLogic));
+
+        private void RemoveAllButtonLogic()
         {
             switch (currentLLSelection)
             {
                 case BookstoreListSelection.Books:
-                    {
-                        bookstoreService.RemoveAllBooks();
-                        Refresh();
-                        break;
-                    }
+                {
+                    bookstoreService.RemoveAllBooks();
+                    Refresh();
+                    break;
+                }
                 default:
-                    {
-                        break;
-                    }
+                {
+                    break;
+                }
             }
         }
         #endregion
 
 
         /* Showing different lists */
-        #region
-        private void ShowList()
-        {
-            DataContextContainer.ItemsSource = null;
 
-            switch (currentLLSelection)
-            {
-                case BookstoreListSelection.Books:
-                    {
-                        DataContextTitle.Content = "Books";
-                        DataContextContainer.ItemsSource = bookstoreService.GetAllBooks();
-                        break;
-                    }
-                case BookstoreListSelection.Invoices:
-                    {
-                        DataContextTitle.Content = "Invoices history";
-                        DataContextContainer.ItemsSource = bookstoreService.GetAllInvoices();
-                        break;
-                    }
-                default:
-                    {
-                        DataContextTitle.Content = "";
-                        break;
-                    }
-            }
-        }
-        #endregion
 
         private string _controlsText;
+        private string _addButtonContent;
+        private string _editButtonContent;
+        private string _removeButtonContent;
+        private string _removeAllButtonContent;
+        private Visibility _addButtonVisibility;
+        private Visibility _sellBookButtonVisibility;
+        private Visibility _editButtonVisibility;
+        private Visibility _removeButtonVisibility;
+        private Visibility _removeAllButtonVisibility;
+        private string _dataContextTitleContent;
+        private ObservableCollection<string> _dataContextContainerItems;
 
         public string ControlsText
         {
             get => _controlsText;
             set
             {
-                _controlsText = value; 
+                _controlsText = value;
                 RaisePropertyChanged(() => ControlsText);
             }
 
         }
 
-        /* Updating buttons when Bookstore List selection changes */
-        #region
-        private void UpdateButtons()
+        public string AddButtonContent
         {
-            switch (currentLLSelection)
+            get => _addButtonContent;
+            set
             {
-                case BookstoreListSelection.Books:
-                    {
-                        ControlsText = "Manage Books";
-                        AddButton.Content = "Add Book";
-                        EditButton.Content = "Edit Book";
-                        RemoveButton.Content = "Remove Book";
-                        RemoveAllButton.Content = "Remove All Books";
-
-                        AddButton.Visibility = Visibility.Visible;
-                        SellBookButton.Visibility = Visibility.Visible;
-                        EditButton.Visibility = Visibility.Visible;
-
-                        RemoveButton.Visibility = Visibility.Visible;
-                        RemoveAllButton.Visibility = Visibility.Visible;
-                        break;
-                    }
-                case BookstoreListSelection.Invoices:
-                    {
-                        ControlsText.Text = "No actions to perform select \"Books\" to manage data";
-                        AddButton.Content = "";
-                        EditButton.Content = "";
-                        RemoveButton.Content = "";
-                        RemoveAllButton.Content = "";
-
-                        AddButton.Visibility = Visibility.Hidden;
-                        SellBookButton.Visibility = Visibility.Hidden;
-
-                        EditButton.Visibility = Visibility.Hidden;
-
-                        RemoveButton.Visibility = Visibility.Hidden;
-                        RemoveAllButton.Visibility = Visibility.Hidden;
-                        break;
-                    }
-                case BookstoreListSelection.None:
-                default:
-                    {
-                        ControlsText.Text = "";
-                        AddButton.Content = "";
-                        EditButton.Content = "";
-                        RemoveButton.Content = "";
-                        RemoveAllButton.Content = "";
-
-                        AddButton.Visibility = Visibility.Hidden;
-                        SellBookButton.Visibility = Visibility.Hidden;
-
-                        EditButton.Visibility = Visibility.Hidden;
-
-                        RemoveButton.Visibility = Visibility.Hidden;
-                        RemoveAllButton.Visibility = Visibility.Hidden;
-                        break;
-                    }
+                _addButtonContent = value;
+                RaisePropertyChanged(() => AddButtonContent);
             }
         }
-        #endregion
 
 
-        /* Window events */
-        #region
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public string EditButtonContent
         {
-            DataContextContainer_SelectionChanged(this.DataContextContainer, null);
+            get => _editButtonContent;
+            set
+            {
+                _editButtonContent = value;
+                RaisePropertyChanged(() => EditButtonContent);
+            }
+
         }
 
-        private void DataContextContainer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public string RemoveButtonContent
         {
+            get => _removeButtonContent;
+            set
+            {
+                _removeButtonContent = value;
+                RaisePropertyChanged(() => RemoveButtonContent);
+            }
 
         }
-        #endregion
 
+        public string RemoveAllButtonContent
+        {
+            get => _removeAllButtonContent;
+            set
+            {
+                _removeAllButtonContent = value;
+                RaisePropertyChanged(() => RemoveButtonContent);
+            }
+        }
 
+        public Visibility AddButtonVisibility
+        {
+            get => _addButtonVisibility;
+            set
+            {
+                _addButtonVisibility = value;
+                RaisePropertyChanged(() => AddButtonVisibility);
+            }
+        }
+
+        public Visibility SellBookButtonVisibility
+        {
+            get => _sellBookButtonVisibility;
+            set
+            {
+                _sellBookButtonVisibility = value;
+                RaisePropertyChanged(() => SellBookButtonVisibility);
+            }
+        }
+
+        public Visibility EditButtonVisibility
+        {
+            get => _editButtonVisibility;
+            set
+            {
+                _editButtonVisibility = value;
+                RaisePropertyChanged(() => EditButtonVisibility);
+            }
+        }
+
+        public Visibility RemoveButtonVisibility
+        {
+            get => _removeButtonVisibility;
+            set
+            {
+                _removeButtonVisibility = value;
+                RaisePropertyChanged(() => RemoveButtonVisibility);
+            }
+        }
+
+        public Visibility RemoveAllButtonVisibility
+        {
+            get => _removeAllButtonVisibility;
+            set
+            {
+                _removeAllButtonVisibility = value;
+                RaisePropertyChanged(() => RemoveAllButtonVisibility);
+            }
+        }
+
+        public string DataContextTitleContent
+        {
+            get => _dataContextTitleContent;
+            set
+            {
+                _dataContextTitleContent = value;
+                RaisePropertyChanged(() => DataContextTitleContent);
+            }
+        }
+
+        public ObservableCollection<string> DataContextContainerItems
+        {
+            get => _dataContextContainerItems;
+            set
+            {
+                _dataContextContainerItems = value;
+                RaisePropertyChanged(() => DataContextContainerItems);
+            }
+        }
 
     }
 }
