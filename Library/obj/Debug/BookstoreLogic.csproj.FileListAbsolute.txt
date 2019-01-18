@@ -1,7 +1,0 @@
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.dll.config
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.dll
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\bin\Debug\LibraryLogic.pdb
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\BookstoreLogic.csprojAssemblyReference.cache
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\BookstoreLogic.csproj.CoreCompileInputs.cache
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.dll
-C:\Users\kmickiewicz\Desktop\STUDIA\programming technologies\WPFBookstore\Library\obj\Debug\LibraryLogic.pdb
