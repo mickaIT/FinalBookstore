@@ -29,7 +29,7 @@ namespace WPFBookstore.ViewModel
         /// </summary>
         public ViewModelLocator()
         {
-           // ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+            // ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             ////if (ViewModelBase.IsInDesignModeStatic)
             ////{
@@ -43,16 +43,34 @@ namespace WPFBookstore.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AddBookViewModel>();
+            SimpleIoc.Default.Register<EditViewModel>();
         }
 
-        public MainViewModel Main
+        public static MainViewModel Main
         {
             get
             {
                 return SimpleIoc.Default.GetInstance<MainViewModel>();
             }
         }
-        
+
+        public static AddBookViewModel AddBook
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<AddBookViewModel>();
+            }
+        }
+
+        public static EditViewModel EditBook
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<EditViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

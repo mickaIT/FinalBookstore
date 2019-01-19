@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Book.cs" />
+    <Compile Include="Data\UnavailableBookException.cs" />
     <Compile Include="Logic\IBookstoreFiller.cs" />
     <Compile Include="Logic_Implementations\BookDaoBasicImpl.cs" />
     <Compile Include="Logic\IBookDao.cs" />

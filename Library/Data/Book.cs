@@ -52,16 +52,17 @@ namespace BookstoreLogic.Data
             if (Count <= 0)
             {
                 State = BookState.Unavailable;
+                throw new UnavailableBookException("No more books available.");
             }
             if (Count == 1)
             {
                 State = BookState.Unavailable;
-                Count = Count - 1;
+                Count--;
 
             }
             else
             {
-                Count = Count - 1;
+                Count--;
             }
 
         }

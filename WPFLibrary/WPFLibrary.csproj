@@ -86,37 +86,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\BookSellingWindow.cs" />
-    <Compile Include="ViewModel\BookReturnResultWindow.cs" />
+    <Compile Include="ViewModel\AddBookViewModel.cs" />
+    <Compile Include="ViewModel\EditViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ModificationResultWindow.cs" />
-    <Compile Include="ViewModel\SellResultWindow.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\BookSellingWindow.xaml.cs">
-      <DependentUpon>BookSellingWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\BookChangeStatusResultWindow.xaml.cs">
-      <DependentUpon>BookChangeStatusResultWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ModificationResultWindow.xaml.cs">
-      <DependentUpon>ModificationResultWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SellResultWindow.xaml.cs">
-      <DependentUpon>SellResultWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\AddBookWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\BookSellingWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\BookChangeStatusResultWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\CannotRemoveErrorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,19 +102,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="ViewModel\AddBookWindow.cs" />
-    <Compile Include="ViewModel\CannotRemoveErrorWindow.cs" />
-    <Compile Include="ViewModel\EditBookWindow.cs" />
-    <Compile Include="ViewModel\MainWindow.cs" />
     <Compile Include="View\AddBookWindow.xaml.cs">
       <DependentUpon>AddBookWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="View\CannotRemoveErrorWindow.xaml.cs">
-      <DependentUpon>CannotRemoveErrorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditBookWindow.xaml.cs">
       <DependentUpon>EditBookWindow.xaml</DependentUpon>
@@ -149,14 +116,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\ModificationResultWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SellResultWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

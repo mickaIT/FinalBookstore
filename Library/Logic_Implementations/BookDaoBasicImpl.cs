@@ -1,8 +1,8 @@
-﻿using System;
+﻿using BookstoreLogic.Data;
+using BookstoreLogic.Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using BookstoreLogic.Logic;
-using BookstoreLogic.Data;
 
 namespace BookstoreLogic.LogicImplementations
 {
@@ -23,17 +23,18 @@ namespace BookstoreLogic.LogicImplementations
             Book existingBook = BookstoreData.BookstoreBooks.Find(b => b.Title.Equals(book.Title) && b.Author.Equals(book.Author));
 
             if (existingBook != null)
-           {
+            {
                 existingBook.Count += book.Count;
                 existingBook.State = BookState.Available;
 
-           } else
-           {
+            }
+            else
+            {
                 BookstoreData.BookstoreBooks.Add(book);
-           }
+            }
 
-                
-            
+
+
 
         }
 
@@ -49,9 +50,13 @@ namespace BookstoreLogic.LogicImplementations
             Book book = GetBook(bookISBN);
 
             if (book != null)
+            {
                 BookstoreData.BookstoreBooks.Remove(book);
+            }
             else
-                throw new InvalidOperationException("RemoveBook: Cannot find specified book");
+            {
+                throw new NullReferenceException("RemoveBook: Cannot find specified book");
+            }
         }
 
 

@@ -2,6 +2,7 @@ using BookstoreLogic.Data;
 using BookstoreLogic.Services;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -19,20 +20,16 @@ namespace WPFBookstore.ViewModel
 
     public class MainViewModel : ViewModelBase
     {
-        public BookstoreDataService bookstoreService { get; set; }
+        public BookstoreDataService BookstoreService { get; set; }
 
         private BookstoreListSelection currentLLSelection = BookstoreListSelection.None;
         private AddBookWindow addBookWindow = null;
         private EditBookWindow editBookWindow = null;
-        private CannotRemoveErrorWindow removalErrorWindow = null;
-        private BookChangeStatusResultWindow bookChangeStatusResultWindow = null;
-        private BookSellingWindow bookSellingWindow = null;
-        private SellResultWindow sellResultWindow = null;
 
         public MainViewModel()
         {
 
-            bookstoreService = new BookstoreDataService();
+            BookstoreService = new BookstoreDataService();
 
             UpdateButtons();
             ShowList();
@@ -68,20 +65,6 @@ namespace WPFBookstore.ViewModel
             ShowList();
         }
 
-        public void SellReturn(bool success)
-        {
-            ShowList();
-
-            if (success)
-            {
-                /* Success */
-                if (sellResultWindow == null || !sellResultWindow.IsLoaded)
-                {
-                    sellResultWindow = new SellResultWindow(SellResultType.SellSuccess);
-                    sellResultWindow.Show();
-                }
-            }
-        }
         #endregion
 
 
@@ -147,6 +130,13 @@ namespace WPFBookstore.ViewModel
         #endregion
 
         #region
+
+        public void ShowList(BookstoreListSelection refresh)
+        {
+            currentLLSelection = refresh;
+            ShowList();
+        }
+
         private void ShowList()
         {
             DataContextContainerItems = null;
@@ -156,13 +146,13 @@ namespace WPFBookstore.ViewModel
                 case BookstoreListSelection.Books:
                 {
                     DataContextTitleContent = "Books";
-                    DataContextContainerItems = new ObservableCollection<string>(bookstoreService.GetAllBooks().Select(book => book.ToString()));
+                    DataContextContainerItems = new ObservableCollection<string>(BookstoreService.GetAllBooks().Select(book => book.ToString()));
                     break;
                 }
                 case BookstoreListSelection.Invoices:
                 {
                     DataContextTitleContent = "Invoices history";
-                    DataContextContainerItems = new ObservableCollection<string>(bookstoreService.GetAllInvoices().Select(sale => sale.ToString()));
+                    DataContextContainerItems = new ObservableCollection<string>(BookstoreService.GetAllInvoices().Select(sale => sale.ToString()));
                     break;
                 }
                 default:
@@ -190,7 +180,7 @@ namespace WPFBookstore.ViewModel
                 {
                     if (addBookWindow == null || !addBookWindow.IsLoaded)
                     {
-                        addBookWindow = new AddBookWindow(bookstoreService, Refresh);
+                        addBookWindow = new AddBookWindow(BookstoreService, Refresh);
                         addBookWindow.Show();
                     }
                     break;
@@ -216,8 +206,8 @@ namespace WPFBookstore.ViewModel
             get => _dataContextContainerSelectedItem;
             set
             {
-                _dataContextContainerSelectedItem = value; 
-                RaisePropertyChanged(()=>DataContextContainerSelectedItem);
+                _dataContextContainerSelectedItem = value;
+                RaisePropertyChanged(() => DataContextContainerSelectedItem);
             }
         }
 
@@ -244,7 +234,7 @@ namespace WPFBookstore.ViewModel
 
                         if (editBookWindow == null || !editBookWindow.IsLoaded)
                         {
-                            editBookWindow = new EditBookWindow(bookstoreService, book, Refresh);
+                            editBookWindow = new EditBookWindow(BookstoreService, book, Refresh);
                             editBookWindow.Show();
                         }
                         break;
@@ -272,61 +262,40 @@ namespace WPFBookstore.ViewModel
 
             if (selection != null)
             {
-                Book book = (Book)selection;
+                Book book = Book.FromString(selection.ToString());
 
                 if (book.State != BookState.Available)
                 {
                     /* Error */
-                    if (sellResultWindow == null || !sellResultWindow.IsLoaded)
-                    {
-                        sellResultWindow = new SellResultWindow(SellResultType.CannotSell);
-                        sellResultWindow.Show();
-                    }
+                    MessageBox.Show("Error. This book is sold.", "Failure", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
                     /* Try to sell the book */
-                    if (bookSellingWindow == null || !bookSellingWindow.IsLoaded)
+
+                    MessageBoxResult result = MessageBox.Show("Do you want to sell?", "Selling", MessageBoxButton.YesNo,
+                        MessageBoxImage.Question);
+
+                    switch (result)
                     {
-                        bookSellingWindow = new BookSellingWindow(bookstoreService, book, SellReturn);
-                        bookSellingWindow.Show();
+                        case MessageBoxResult.Yes:
+                            try
+                            {
+                                BookstoreService.AddSale(book.ISBN);
+                                ShowList(BookstoreListSelection.Books);
+                                MessageBox.Show("Succesfully sold", "Selling", MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
+                            }
+                            catch (UnavailableBookException)
+                            {
+                                MessageBox.Show("Not sold, no more books", "Selling", MessageBoxButton.OK,
+                                    MessageBoxImage.Error);
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 }
-            }
-        }
-
-        private ICommand _changeStatusButtonCommand;
-        public ICommand ChangeStatusButtonCommand => _changeStatusButtonCommand ?? (_changeStatusButtonCommand = new RelayCommand(ChangeStatusButtonLogic));
-
-        private void ChangeStatusButtonLogic()
-        {
-            object selection = DataContextContainerSelectedItem;
-
-            if (selection != null)
-            {
-                Book book = (Book)selection;
-
-                if (book.State == BookState.Available)
-                {
-                    /* Error */
-                    if (bookChangeStatusResultWindow == null || !bookChangeStatusResultWindow.IsLoaded)
-                    {
-                        bookChangeStatusResultWindow = new BookChangeStatusResultWindow(false);
-                    }
-                }
-                else
-                {
-                    bookstoreService.RemoveSale(book);
-
-                    /* Success */
-                    if (bookChangeStatusResultWindow == null || !bookChangeStatusResultWindow.IsLoaded)
-                    {
-                        bookChangeStatusResultWindow = new BookChangeStatusResultWindow(true);
-                        bookChangeStatusResultWindow.Show();
-                    }
-                }
-
-                Refresh();
             }
         }
         #endregion
@@ -342,32 +311,32 @@ namespace WPFBookstore.ViewModel
         {
             object selection = DataContextContainerSelectedItem;
 
-            if (selection != null)
+            if (selection == null)
             {
-                switch (currentLLSelection)
-                {
-                    case BookstoreListSelection.Books:
-                    {
-                        Book book = (Book)selection;
+                MessageBox.Show("Select sth, pl0x", "Human, pl0x, stahp", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+                return;
+            }
 
-                        try
-                        {
-                            bookstoreService.RemoveBook(book);
-                            Refresh();
-                        }
-                        catch
-                        {
-                            removalErrorWindow = new CannotRemoveErrorWindow(book);
-                            removalErrorWindow.Show();
-                        }
-                        break;
-                    }
-                    default:
+            switch (currentLLSelection)
+            {
+                case BookstoreListSelection.Books:
+                {
+                    Book book = Book.FromString(selection.ToString());
+
+                    try
                     {
-                        break;
+                        BookstoreService.RemoveBook(book);
+                        Refresh();
                     }
+                    catch (NullReferenceException)
+                    {
+                        MessageBox.Show("Book not found", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    break;
                 }
             }
+
         }
 
 
@@ -380,7 +349,7 @@ namespace WPFBookstore.ViewModel
             {
                 case BookstoreListSelection.Books:
                 {
-                    bookstoreService.RemoveAllBooks();
+                    BookstoreService.RemoveAllBooks();
                     Refresh();
                     break;
                 }

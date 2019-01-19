@@ -14,8 +14,6 @@
 
         <!-- Overall window grid -->
         <Grid>
-
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <!-- Scrollable list -->
@@ -33,7 +31,7 @@
 
 
                 <Label x:Name="DataContextTitle" Content="{Binding DataContextTitleContent, UpdateSourceTrigger=PropertyChanged}" FontSize="18px" Margin="19,46,0,315" FontFamily="Stencil" Width="728" HorizontalAlignment="Left" Grid.RowSpan="2"/>
-                <ListBox x:Name="DataContextContainer" ItemsSource="{Binding DataContextContainerItems}" SelectedItem="{Binding DataContextContainerSelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                <ListBox x:Name="DataContextContainer" ItemsSource="{Binding DataContextContainerItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding DataContextContainerSelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                          
                          VerticalAlignment="Top" Margin="10,28.4,10,0" MinWidth="200" MinHeight="150" Height="171" Grid.Row="1"/>
 
