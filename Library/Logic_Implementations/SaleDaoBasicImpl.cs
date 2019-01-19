@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using BookstoreLogic.Logic;
-using BookstoreLogic.Data;
+using LibraryLogic.Data;
+using LibraryLogic.Logic;
 
-namespace BookstoreLogic.LogicImplementations
+namespace LibraryLogic.Logic_Implementations
 {
     public class SaleDaoBasicImpl : ISaleDao
     {

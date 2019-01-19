@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace BookstoreLogic.Data
+namespace LibraryLogic.Data
 {
     public class Sale
     {

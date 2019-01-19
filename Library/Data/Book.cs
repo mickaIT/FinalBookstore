@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 
-namespace BookstoreLogic.Data
+namespace LibraryLogic.Data
 {
     public class Book
     {

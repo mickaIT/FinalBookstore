@@ -1,14 +1,13 @@
-﻿using BookstoreLogic.Data;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System.Windows;
 using System.Windows.Input;
+using LibraryLogic.Data;
 
 namespace WPFBookstore.ViewModel
 {
     public class EditViewModel : ViewModelBase
     {
-
         private int editedBookId;
         private string _titleText;
         private string _authorText;

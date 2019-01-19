@@ -1,18 +1,11 @@
-﻿using System;
-using System.Windows;
-using BookstoreLogic.Data;
-using BookstoreLogic.Services;
+﻿using System.Windows;
 
-namespace WPFBookstore
+namespace WPFBookstore.View
 {
     public partial class EditBookWindow : Window
     {
-
-
-        public EditBookWindow(BookstoreDataService service, Book book, Action callback)
+        public EditBookWindow()
         {
-
-
             InitializeComponent();
         }
     }

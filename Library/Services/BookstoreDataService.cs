@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using BookstoreLogic.Data;
-using BookstoreLogic.Logic;
-using BookstoreLogic.LogicImplementations;
+using LibraryLogic.Data;
+using LibraryLogic.Logic_Implementations;
 
-namespace BookstoreLogic.Services
+namespace LibraryLogic.Services
 {
     public class BookstoreDataService
     {

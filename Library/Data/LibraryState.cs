@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BookstoreLogic.Data
+namespace LibraryLogic.Data
 {
     public class BookstoreState
     {

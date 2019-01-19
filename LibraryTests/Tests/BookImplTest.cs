@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BookstoreLogic.Data;
-using BookstoreLogic.LogicImplementations;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using LibraryLogic.Data;
+using LibraryLogic.Logic_Implementations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BookstoreTests
+namespace LibraryLogic.Tests.Tests
 {
     [TestClass]
     public class BookImplTest

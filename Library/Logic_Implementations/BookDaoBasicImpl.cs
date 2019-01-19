@@ -1,10 +1,10 @@
-﻿using BookstoreLogic.Data;
-using BookstoreLogic.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using LibraryLogic.Data;
+using LibraryLogic.Logic;
 
-namespace BookstoreLogic.LogicImplementations
+namespace LibraryLogic.Logic_Implementations
 {
     public class BookDaoBasicImpl : IBookDao
     {

@@ -1,9 +1,5 @@
-﻿using BookstoreLogic.Services;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -67,16 +63,16 @@ namespace WPFBookstore.ViewModel
             get => _countText;
             set
             {
-                _countText = value; 
-                RaisePropertyChanged(()=>CountText);
+                _countText = value;
+                RaisePropertyChanged(() => CountText);
             }
         }
 
         private void AddBookButtonLogic()
         {
-            if (!string.IsNullOrEmpty(TitleText) && !string.IsNullOrEmpty(AuthorText) && !string.IsNullOrEmpty( GenreText) && !string.IsNullOrEmpty(CountText))
+            if (!string.IsNullOrEmpty(TitleText) && !string.IsNullOrEmpty(AuthorText) && !string.IsNullOrEmpty(GenreText) && !string.IsNullOrEmpty(CountText))
             {
-                ViewModelLocator.Main.BookstoreService.AddBook(TitleText, AuthorText, GenreText, Int32.Parse(CountText));
+                ViewModelLocator.Main.BookstoreService.AddBook(TitleText, AuthorText, GenreText, int.Parse(CountText));
 
                 ViewModelLocator.Main.ShowList(BookstoreListSelection.Books);
 

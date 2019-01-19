@@ -12,7 +12,6 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 //using Microsoft.Practices.ServiceLocation;
 
@@ -47,29 +46,11 @@ namespace WPFBookstore.ViewModel
             SimpleIoc.Default.Register<EditViewModel>();
         }
 
-        public static MainViewModel Main
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<MainViewModel>();
-            }
-        }
+        public static MainViewModel Main => SimpleIoc.Default.GetInstance<MainViewModel>();
 
-        public static AddBookViewModel AddBook
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<AddBookViewModel>();
-            }
-        }
+        public static AddBookViewModel AddBook => SimpleIoc.Default.GetInstance<AddBookViewModel>();
 
-        public static EditViewModel EditBook
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<EditViewModel>();
-            }
-        }
+        public static EditViewModel EditBook => SimpleIoc.Default.GetInstance<EditViewModel>();
 
         public static void Cleanup()
         {

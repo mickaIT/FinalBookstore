@@ -1,6 +1,6 @@
-﻿using BookstoreLogic.Data;
+﻿using LibraryLogic.Data;
 
-namespace BookstoreLogic.Logic
+namespace LibraryLogic.Logic
 {
     public interface IBookstoreFiller
     {

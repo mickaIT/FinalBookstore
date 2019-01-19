@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace BookstoreLogic.Data
+namespace LibraryLogic.Data
 {
     [Serializable]
     public class UnavailableBookException : Exception

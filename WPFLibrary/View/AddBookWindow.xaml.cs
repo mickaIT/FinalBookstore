@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Windows;
-using BookstoreLogic.Services;
+using LibraryLogic.Services;
 
-namespace WPFBookstore
+namespace WPFBookstore.View
 {
     public partial class AddBookWindow : Window
     {
-
-        public AddBookWindow(BookstoreDataService service, Action callback)
+        public AddBookWindow()
         {
             InitializeComponent();
         }

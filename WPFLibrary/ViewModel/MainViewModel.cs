@@ -1,5 +1,3 @@
-using BookstoreLogic.Data;
-using BookstoreLogic.Services;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System;
@@ -7,6 +5,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using LibraryLogic.Data;
+using LibraryLogic.Services;
+using WPFBookstore.View;
 
 
 namespace WPFBookstore.ViewModel
@@ -180,7 +181,7 @@ namespace WPFBookstore.ViewModel
                 {
                     if (addBookWindow == null || !addBookWindow.IsLoaded)
                     {
-                        addBookWindow = new AddBookWindow(BookstoreService, Refresh);
+                        addBookWindow = new AddBookWindow();
                         addBookWindow.Show();
                     }
                     break;
@@ -234,7 +235,7 @@ namespace WPFBookstore.ViewModel
 
                         if (editBookWindow == null || !editBookWindow.IsLoaded)
                         {
-                            editBookWindow = new EditBookWindow(BookstoreService, book, Refresh);
+                            editBookWindow = new EditBookWindow();
                             editBookWindow.Show();
                         }
                         break;
