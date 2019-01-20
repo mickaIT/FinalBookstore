@@ -56,10 +56,10 @@ namespace WPFBookstore.ViewModel
                 return;
             }
 
-            SetupWindow(Book.FromString(selection.ToString()));
+            SetupWindow(LibraryLogic.Model.Book.FromString(selection.ToString()));
         }
 
-        private void SetupWindow(Book book)
+        private void SetupWindow(LibraryLogic.Model.Book book)
         {
             editedBookId = book.ISBN;
 

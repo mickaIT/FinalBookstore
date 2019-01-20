@@ -6,15 +6,18 @@ namespace LibraryLogic.Services
 {
     public class BookstoreDataService
     {
-        private BookstoreUOW bookstoreUOW;
+        //private BookstoreUOW bookstoreUOW;
+        private Model.BookstoreDataContext bookstore;
 
         public BookstoreDataService()
         {
-            BookstoreState BookstoreState = new BookstoreState();
-            BookDaoBasicImpl bookDao = new BookDaoBasicImpl(BookstoreState);
-            SaleDaoBasicImpl saleDao = new SaleDaoBasicImpl(BookstoreState);
+            //string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Adam\Documents\bookstore.mdf; Integrated Security = True; Connect Timeout = 30";
+            bookstore = new Model.BookstoreDataContext();
+            //BookstoreState BookstoreState = new BookstoreState();
+            //BookDaoBasicImpl bookDao = new BookDaoBasicImpl(BookstoreState);
+            //SaleDaoBasicImpl saleDao = new SaleDaoBasicImpl(BookstoreState);
 
-            bookstoreUOW = new BookstoreUOW(BookstoreState, bookDao, saleDao);
+            //bookstoreUOW = new BookstoreUOW(BookstoreState, bookDao, saleDao);
             FillBookstoreDataWithConstants();
         }
 
@@ -23,15 +26,18 @@ namespace LibraryLogic.Services
         #region 
         public void RemoveAllData()
         {
-            bookstoreUOW.RemoveAllData();
+            bookstore.RemoveData();
+            //bookstoreUOW.RemoveAllData();
         }
         public void RemoveAllBooks()
         {
-            bookstoreUOW.RemoveAllBooks();
-        } 
+            bookstore.RemoveBooks();
+            //bookstoreUOW.RemoveAllBooks();
+        }
         public void RemoveAllInvoices()
         {
-            bookstoreUOW.RemoveAllInvoices();
+            bookstore.RemoveSales();
+            //bookstoreUOW.RemoveAllInvoices();
         }
         #endregion
 
@@ -41,7 +47,8 @@ namespace LibraryLogic.Services
         public void FillBookstoreDataWithConstants()
         {
             ConstantsBookstoreFiller Filler = new ConstantsBookstoreFiller();
-            bookstoreUOW.FillBookstoreState(Filler);
+            Filler.Fill(bookstore);
+            //bookstoreUOW.FillBookstoreState(Filler);
         }
         #endregion
 
@@ -50,63 +57,76 @@ namespace LibraryLogic.Services
         #region
         public void AddBook(Book book)
         {
-            bookstoreUOW.GetBooksDao.AddBook(book);
+            bookstore.AddBook(book);
+            //bookstoreUOW.GetBooksDao.AddBook(book);
         }
         public void AddBook(string title, string author, string genre, int count)
         {
-            bookstoreUOW.GetBooksDao.AddBook(new Book(title, author, genre, count));
+            bookstore.AddBook(new Book(title, author, genre, count));
+            //bookstoreUOW.GetBooksDao.AddBook(new Book(title, author, genre, count));
         }
 
         public void UpdateBook(BookUpdateData data)
         {
-            bookstoreUOW.GetBooksDao.UpdateBook(data);
+            bookstore.UpdateBook(data);
+            //bookstoreUOW.GetBooksDao.UpdateBook(data);
         }
         public void UpdateBook(int id, string title, string author, string genre)
         {
-            bookstoreUOW.GetBooksDao.UpdateBook(new BookUpdateData(id, title, author, genre));
+            bookstore.UpdateBook(new BookUpdateData(id, title, author, genre));
+            //bookstoreUOW.GetBooksDao.UpdateBook(new BookUpdateData(id, title, author, genre));
         }
 
         public void RemoveBook(int id)
         {
-            bookstoreUOW.GetBooksDao.RemoveBook(id);
+            bookstore.RemoveBook(id);
+            //bookstoreUOW.GetBooksDao.RemoveBook(id);
         }
         public void RemoveBook(Book book)
         {
             RemoveBook(book.ISBN);
         }
       
-        public Book GetBook(int id)
+        public Model.Book GetBook(int id)
         {
-            return bookstoreUOW.GetBooksDao.GetBook(id);
+            return bookstore.GetBook(id);
+            //return bookstoreUOW.GetBooksDao.GetBook(id);
         }
-        public List<Book> GetAllBooks()
+        public List<Model.Book> GetAllBooks()
         {
-            return bookstoreUOW.GetBooksDao.GetAllBooks();
+            return bookstore.GetAllBooks();
+            //return bookstoreUOW.GetBooksDao.GetAllBooks();
         }
-        public List<Book> GetBooksByAuthor(string author)
+        public List<Model.Book> GetBooksByAuthor(string author)
         {
-            return bookstoreUOW.GetBooksDao.GetBooksByAuthor(author);
+            return bookstore.GetBooksByAuthor(author);
+            //return bookstoreUOW.GetBooksDao.GetBooksByAuthor(author);
         }
-        public List<Book> GetBooksByTitle(string title)
+        public List<Model.Book> GetBooksByTitle(string title)
         {
-            return bookstoreUOW.GetBooksDao.GetBooksByTitle(title);
+            return bookstore.GetBooksByTitle(title);
+            //return bookstoreUOW.GetBooksDao.GetBooksByTitle(title);
         }
-        public List<Book> GetBooksByGenre(string genre)
+        public List<Model.Book> GetBooksByGenre(string genre)
         {
-            return bookstoreUOW.GetBooksDao.GetBooksByGenre(genre);
+            return bookstore.GetBooksByGenre(genre);
+            //return bookstoreUOW.GetBooksDao.GetBooksByGenre(genre);
         }
-        public List<Book> GetBooksByState(BookState state)
+        public List<Model.Book> GetBooksByState(BookState state)
         {
-            return bookstoreUOW.GetBooksDao.GetBooksByState(state);
+            return bookstore.GetBooksByState(state);
+            //return bookstoreUOW.GetBooksDao.GetBooksByState(state);
         }
 
         public void SellBook(int id)
         {
-            bookstoreUOW.GetBooksDao.SellBook(id);
+            bookstore.SellBook(id);
+            //bookstoreUOW.GetBooksDao.SellBook(id);
         }
         public void ChangeStatus(int id)
         {
-            bookstoreUOW.GetBooksDao.ChangeStatus(id);
+            bookstore.ChangeStatus(id);
+            //bookstoreUOW.GetBooksDao.ChangeStatus(id);
         }
         #endregion
 
@@ -115,18 +135,25 @@ namespace LibraryLogic.Services
         #region
         public void AddSale(int bookId)
         {
-            Book book = bookstoreUOW.GetBooksDao.GetBook(bookId);
+            Model.Book book = GetBook(bookId);
 
-            bookstoreUOW.GetInvoicesDao.AddSale(new Sale(book));
+            Book _book = new Book(book.Title, book.Author, book.Genre, book.Count, book.ISBN);
+            AddSale(new Sale(_book));
+
+            //Book book = bookstoreUOW.GetBooksDao.GetBook(bookId);
+
+            //bookstoreUOW.GetInvoicesDao.AddSale(new Sale(book));
         }
         public void AddSale(Sale sale)
         {
-            bookstoreUOW.GetInvoicesDao.AddSale(sale);
+            bookstore.AddSale(sale);
+            //bookstoreUOW.GetInvoicesDao.AddSale(sale);
         }
-        
+
         public void RemoveSale(int id)
         {
-            bookstoreUOW.GetInvoicesDao.RemoveSale(id);
+            bookstore.RemoveSale(id);
+            //bookstoreUOW.GetInvoicesDao.RemoveSale(id);
         }
         public void RemoveSale(Sale sale)
         {
@@ -134,16 +161,19 @@ namespace LibraryLogic.Services
         }
         public void RemoveSale(Book soldBook)
         {
-            bookstoreUOW.GetInvoicesDao.RemoveSale(soldBook);
+            bookstore.RemoveSale(soldBook);
+            //bookstoreUOW.GetInvoicesDao.RemoveSale(soldBook);
         }
 
-        public Sale GetSale(int id)
+        public Model.Sale GetSale(int id)
         {
-            return bookstoreUOW.GetInvoicesDao.GetSale(id);
+            return bookstore.GetSale(id);
+            //return bookstoreUOW.GetInvoicesDao.GetSale(id);
         }
-        public List<Sale> GetAllInvoices()
+        public List<Model.Sale> GetAllInvoices()
         {
-            return bookstoreUOW.GetInvoicesDao.GetAllInvoices();
+            return bookstore.GetAllInvoices();
+            //return bookstoreUOW.GetInvoicesDao.GetAllInvoices();
         }
         #endregion
 
@@ -152,12 +182,14 @@ namespace LibraryLogic.Services
         #region
         public int BooksCount()
         {
-            return bookstoreUOW.GetBooksDao.GetAllBooks().Count;
+            return GetAllBooks().Count;
+            //return bookstoreUOW.GetBooksDao.GetAllBooks().Count;
         }
 
         public int InvoicesCount()
         {
-            return bookstoreUOW.GetInvoicesDao.GetAllInvoices().Count;
+            return GetAllInvoices().Count;
+            //return bookstoreUOW.GetInvoicesDao.GetAllInvoices().Count;
         }
         #endregion
     }
