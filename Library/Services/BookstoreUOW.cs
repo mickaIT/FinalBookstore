@@ -21,7 +21,7 @@ namespace LibraryLogic.Services
 
         public void FillBookstoreState(IBookstoreFiller filler)
         {
-            filler.Fill(BookstoreData);
+            //filler.Fill(BookstoreData); // TODO: Remove this whole class
         }
 
 

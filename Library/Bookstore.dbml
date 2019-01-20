@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bookstore" Class="BookstoreDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bookstore.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="LibraryLogic.Properties.Settings" SettingsPropertyName="bookstoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Book" Member="Books">
+    <Type Name="Book">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ISBN" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+      <Column Name="Genre" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="BookState" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Association Name="Book_LibraryState" Member="LibraryStates" ThisKey="Id" OtherKey="BookStoreBooks" Type="LibraryState" />
+      <Association Name="Book_Sale" Member="Sales" ThisKey="Id" OtherKey="SoldBook" Type="Sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LibraryState" Member="LibraryStates">
+    <Type Name="LibraryState">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BookStoreBooks" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="BookInvoices" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Association Name="Book_LibraryState" Member="Book" ThisKey="BookStoreBooks" OtherKey="Id" Type="Book" IsForeignKey="true" />
+      <Association Name="Sale_LibraryState" Member="Sale" ThisKey="BookInvoices" OtherKey="Id" Type="Sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sale" Member="Sales">
+    <Type Name="Sale">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SoldBook" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InvoiceDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Sale_LibraryState" Member="LibraryStates" ThisKey="Id" OtherKey="BookInvoices" Type="LibraryState" />
+      <Association Name="Book_Sale" Member="Book" ThisKey="SoldBook" OtherKey="Id" Type="Book" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

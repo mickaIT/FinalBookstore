@@ -8,7 +8,7 @@ using System.Windows.Input;
 using LibraryLogic.Data;
 using LibraryLogic.Services;
 using WPFBookstore.View;
-
+using System.Linq.Expressions;
 
 namespace WPFBookstore.ViewModel
 {
@@ -231,7 +231,7 @@ namespace WPFBookstore.ViewModel
                 {
                     case BookstoreListSelection.Books:
                     {
-                        Book book = Book.FromString(selection.ToString());
+                        //Book book = Book.FromString(selection.ToString());
 
                         if (editBookWindow == null || !editBookWindow.IsLoaded)
                         {

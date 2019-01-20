@@ -4,6 +4,6 @@ namespace LibraryLogic.Logic
 {
     public interface IBookstoreFiller
     {
-        void Fill(BookstoreState state);
+        void Fill(Model.BookstoreDataContext state);
     }
 }
